@@ -69,12 +69,11 @@ const Front = () => {
                   <p className="text-secondary m-0">Innovative Ideas</p>
                 </div>
 
-                <h1 className="display-3 fw-bold">
+                <h1 className="display-3 fw-bold mb-0">
                   Welcome to <span className="text">iFixit Pakistan</span>{" "}
                   <GoDotFill size={25} color="#1AA3DD" />
                 </h1>
-
-                <h3 className="fw-bold display-5 text-white">
+                <h6 className="fw-bold display-5 text-white mt-0 mb-0">
                   <Typewriter
                     options={{
                       strings: data.map((d) => d.text),
@@ -85,9 +84,9 @@ const Front = () => {
                       typeSpeed: 60,
                     }}
                   />
-                </h3>
+                </h6>
 
-                <p className="text-secondary">{data[descIndex].desc}</p>
+                <p className="text-secondary mt-1">{data[descIndex].desc}</p>
 
                 <div className="d-flex align-items-center hov justify-content-between">
                   <SlidingDiv content="Get Started" />
