@@ -21,23 +21,40 @@ const Advertisment = () => {
       <div className="container text-center py-5 my-5">
         <MyMarquee />
       </div>
-      <div className="row justify-content-center align-items-center container mx-auto">
-        {ad_data.map((item, index) => {
-          return (
-            <>
-              <div className="col-xl-3 col-sm-6">
-                <div className="d-flex align-items-center justify-content-center gap-4">
-                  <h6 className=" text-stroke">{item.number}</h6>
-                  <div className="text-capitalize ">
-                    <h6 className="fs-4 text">{item.title1}</h6>
-                    <h6 className="fs-4 text">{item.title2}</h6>
-                  </div>
-                </div>
-              </div>
-            </>
-          );
-        })}
+      <div className="row justify-content-center align-items-center container mx-auto py-5">
+  <div className="col-lg-3 col-md-4 col-sm-6 col-10 mb-5 text-center">
+    <div className="position-relative">
+      <h6 className="text-stroke mb-3">100+</h6>
+      <div className="ad-bottom-text">
+        <div>Expert</div>
+        <div>Skills</div>
       </div>
+    </div>
+  </div>
+
+  <div className="col-lg-3 col-md-4 col-sm-6 col-10 mb-5 text-center">
+    <div className="position-relative">
+      <h6 className="text-stroke mb-3">100K</h6>
+      <div className="ad-bottom-text">
+        <div>Happy</div>
+        <div>Customers</div>
+      </div>
+    </div>
+  </div>
+
+  <div className="col-lg-3 col-md-4 col-sm-6 col-10 mb-5 text-center">
+    <div className="position-relative">
+      <h6 className="text-stroke mb-3">99%</h6>
+      <div className="ad-bottom-text">
+        <div>Success</div>
+        <div>Rate</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
     </>
   );
 };

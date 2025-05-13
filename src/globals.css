@@ -560,3 +560,18 @@ color :#1AA3DD;
   box-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
 }
 
+.text-stroke {
+  font-size: 100px;
+  font-weight: 800;
+  color: transparent;
+  -webkit-text-stroke: 2px white;
+  line-height: 1;
+}
+
+.ad-bottom-text {
+  color: #00aaff;
+  font-weight: 600;
+  font-size: 20px;
+  text-transform: capitalize;
+}
+
