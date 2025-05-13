@@ -26,14 +26,14 @@ export const card_data = [
   {
     id: 4,
     image:
-      "https://gaaga.wpengine.com/wp-content/uploads/2023/06/home-portfolio-listing-images-4.jpg",
+      "https://www.nothingmobileservice.brokencare.co.in/images/nothing-mobile-service.png",
     heading: "Creative Content",
     desc: "Quis commodo odio platea dictumst aenean sed. Massa eget egestas purus viverra accumsan in nisl nisi.",
   },
   {
     id: 5,
     image:
-      "https://gaaga.wpengine.com/wp-content/uploads/2023/06/home-portfolio-listing-images-5-1.jpg",
+      "https://png.pngtree.com/png-vector/20240914/ourmid/pngtree-phone-repair-electronic-devices-on-transparent-background-png-image_13838381.png",
     heading: "Innovative Ideas",
     desc: "Quis commodo odio platea dictumst aenean sed. Massa eget egestas purus viverra accumsan in nisl nisi.",
   },
