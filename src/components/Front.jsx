@@ -95,6 +95,7 @@ const Front = () => {
             />
           </div>
         </div>
+        
       </div>
     </>
   );

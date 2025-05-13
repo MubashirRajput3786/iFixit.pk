@@ -1,21 +1,25 @@
 import React from "react";
 import { ad_data } from "../data/advertisment_data";
+import MyMarquee from "../components/Marquee";
 
 const Advertisment = () => {
   return (
     <>
       <div className="display-5 fw-bold container text-center p-5 my-5 ">
-        It's Time To Take Your Digital Marketing{" "}
+      We Provide Guaranted Solution For Every Sinlge Device With 30 Days Warranty{" "}
         <img
           style={{ borderRadius: "50px" }}
           src="https://gaaga.wpengine.com/wp-content/uploads/2023/06/content-image-small-size-4.png"
         />{" "}
-        To The Next Level{" "}
+        That Make Our Customer Satisfied{" "}
         <img
           src="https://aimax.wpengine.com/wp-content/uploads/2023/06/group-image.png"
           alt=""
         />{" "}
-        We Are Always Here To Help You Grow Your Business
+        We Also Provide Complete Mobile Repairing Courses From Beginer to Advance Level For Every One.
+      </div>
+      <div className="container text-center py-5 my-5">
+        <MyMarquee />
       </div>
       <div className="row justify-content-center align-items-center container mx-auto">
         {ad_data.map((item, index) => {
