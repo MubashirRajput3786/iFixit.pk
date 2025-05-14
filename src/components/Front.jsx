@@ -49,7 +49,7 @@ const Front = () => {
 
                 <h1 className="display-3 fw-bold">
   Welcome to i<span className="text">Fixit Pakistan</span>{" "}
-  <GoDotFill size={25} color="#1AA3DD" />
+  {/* <GoDotFill size={25} color="#1AA3DD" /> */}
   <h1>
   <Typewriter
     options={{
