@@ -5,9 +5,9 @@ import Front from "../components/Front";
 import Group from "../components/Group";
 import { Particless } from "../components/Particles";
 import Gallery from "../components/Gallery";
-import Projects from "../components/Projects";
 import Animated from "../components/Animated";
 import Advertisment from "../components/Advertisment";
+import CoreValue from "../components/CoreValue"
 
 const Home = () => {
   const [open, setOpen] = useState(false);
@@ -22,7 +22,7 @@ const Home = () => {
       </div>
       <Group />
       <Gallery />
-      <Projects />
+      <CoreValue />
       <Advertisment />
     </>
   );

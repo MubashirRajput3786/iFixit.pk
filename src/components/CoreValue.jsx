@@ -7,7 +7,7 @@ import { IoStarHalfOutline } from "react-icons/io5";
 import { IoHeartHalf } from "react-icons/io5";
 
 
-const Projects = () => {
+const CoreValue = () => {
   return (
     <div className="row align-items-center justify-content-center p-3">
       <div className="col-lg-4 p-5">
@@ -71,4 +71,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default CoreValue;

@@ -2,12 +2,11 @@ import React from "react";
 import Home from "./pages/Home";
 import "./globals.css";
 
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Projects from "./components/Projects";
-import Services from "./pages/Services";
-import Blog from "./pages/Blog";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import Services from "./pages/Service";
+import About_us from "./pages/About_us"
+import Shop from "./pages/Shop";
 import Contact from "./pages/Contact";
-import Header from "./components/Header";
 
 const App = () => {
   return (
@@ -15,9 +14,9 @@ const App = () => {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/blog" element={<Blog />} />
+          <Route path="/Service" element={<Services />} />
+          <Route path="/About_us" element={<About_us />} />
+          <Route path="/Shop" element={<Shop />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </Router>

@@ -6,18 +6,18 @@ export const menu_data = [
   },
   {
     id: 2,
-    name: "Projects",
-    link: "/projects",
+    name: "Services",
+    link: "/Service",
   },
   {
     id: 3,
-    name: "Services",
-    link: "/services",
+    name: "About us",
+    link: "/About_us",
   },
   {
     id: 4,
-    name: "Blog",
-    link: "/blog",
+    name: "Shop",
+    link: "/Shop",
   },
   {
     id: 5,
