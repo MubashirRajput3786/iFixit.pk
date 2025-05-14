@@ -24,6 +24,7 @@ const Home = () => {
       <Gallery />
       <CoreValue />
       <Advertisment />
+
     </>
   );
 };

@@ -1,7 +1,12 @@
 import React from "react";
+import ServicesSection from "../components/ServicesSection";
 
-const Services = () => {
-  return <div>Service</div>;
+const Service = () => {
+  return (
+    <div className="bg-black min-h-screen">
+      <ServicesSection />
+    </div>
+  );
 };
 
-export default Services;
+export default Service;
