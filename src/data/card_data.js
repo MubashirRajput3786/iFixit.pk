@@ -18,7 +18,7 @@ export const card_data = [
   {
     id: 3,
     image:
-      "https://i.pinimg.com/564x/b4/8b/73/b48b7331d3daecfc987c4478f68db3ec.jpg",
+      "https://cdn-images.dzcdn.net/images/artist/6d031a5dc8fdbb5154ea687b9331a040/1900x1900-000000-80-0-0.jpg",
     heading: " Muhammad Waleed",
     title:"Relation Manager",
     desc: "Building strong client relationships to ensure trust, loyalty, and satisfaction",
