@@ -20,8 +20,8 @@ const Advertisment = () => {
             loop={0}
             cursor
             cursorStyle="|"
-            typeSpeed={50}
-            deleteSpeed={30}
+            typeSpeed={60}
+            deleteSpeed={40}
             delaySpeed={2000}
           />
         </span>
