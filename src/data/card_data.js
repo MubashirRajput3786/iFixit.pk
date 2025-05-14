@@ -2,7 +2,7 @@ export const card_data = [
   {
     id: 1,
     image:
-      "https://png.pngtree.com/png-vector/20231019/ourmid/pngtree-avatar-of-a-brunette-man-png-image_10214154.png",
+      "https://i.pinimg.com/originals/21/94/33/2194330880a0401d00f9460697533796.jpg",
     heading: "Umair Riaz",
     title:"Manager Display Department",
     desc: "Leads the display department with a focus on quality and innovation.",
@@ -10,7 +10,7 @@ export const card_data = [
   {
     id: 2,
     image:
-      "https://png.pngtree.com/png-vector/20230831/ourmid/pngtree-man-avatar-image-for-profile-png-image_9197908.png",
+      "https://i.pinimg.com/564x/34/40/66/3440665bd678a0fee6d4ed0686f36fad.jpg",
     heading: "Rizwan Rajput",
     title:"Founder & CEO",
     desc: "Spearheading iFixit mission to revolutionize mobile repair through innovation and strategic leadership.",
@@ -18,7 +18,7 @@ export const card_data = [
   {
     id: 3,
     image:
-      "https://png.pngtree.com/png-vector/20231014/ourmid/pngtree-man-avatar-clipart-illustration-png-image_10160105.png",
+      "https://i.pinimg.com/564x/b4/8b/73/b48b7331d3daecfc987c4478f68db3ec.jpg",
     heading: " Muhammad Waleed",
     title:"Relation Manager",
     desc: "Building strong client relationships to ensure trust, loyalty, and satisfaction",
