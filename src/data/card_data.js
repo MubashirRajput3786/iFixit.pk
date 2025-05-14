@@ -10,7 +10,7 @@ export const card_data = [
   {
     id: 2,
     image:
-      "https://i.pinimg.com/564x/34/40/66/3440665bd678a0fee6d4ed0686f36fad.jpg",
+      "https://showbizhut.com/wp-content/uploads/2023/11/sahar-hashmi-actress-age-husband-drama-list.jpg",
     heading: "Rizwan Rajput",
     title:"Founder & CEO",
     desc: "Spearheading iFixit mission to revolutionize mobile repair through innovation and strategic leadership.",
