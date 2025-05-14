@@ -5,7 +5,7 @@ import Services from "./pages/Service";
 import About_us from "./pages/About_us";
 import Shop from "./pages/Shop";
 import Contact from "./pages/Contact";
-import Layout from "./components/Layout"; // 👈 path sahi hai
+import Layout from "../src/components/Layout";
 import "./globals.css";
 
 const App = () => {
