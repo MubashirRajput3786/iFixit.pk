@@ -2,7 +2,7 @@ export const card_data = [
   {
     id: 1,
     image:
-      "https://i.pinimg.com/originals/21/94/33/2194330880a0401d00f9460697533796.jpg",
+      "https://png.pngtree.com/png-clipart/20231019/original/pngtree-user-profile-avatar-png-image_13369990.png",
     heading: "Umair Riaz",
     title:"Manager Display Department",
     desc: "Leads the display department with a focus on quality and innovation.",
@@ -10,7 +10,7 @@ export const card_data = [
   {
     id: 2,
     image:
-      "https://showbizhut.com/wp-content/uploads/2023/11/sahar-hashmi-actress-age-husband-drama-list.jpg",
+      "https://png.pngtree.com/png-clipart/20231019/original/pngtree-user-profile-avatar-png-image_13369990.png",
     heading: "Rizwan Rajput",
     title:"Founder & CEO",
     desc: "Spearheading iFixit mission to revolutionize mobile repair through innovation and strategic leadership.",
@@ -18,7 +18,7 @@ export const card_data = [
   {
     id: 3,
     image:
-      "https://cdn-images.dzcdn.net/images/artist/6d031a5dc8fdbb5154ea687b9331a040/1900x1900-000000-80-0-0.jpg",
+      "https://png.pngtree.com/png-clipart/20231019/original/pngtree-user-profile-avatar-png-image_13369990.png",
     heading: " Muhammad Waleed",
     title:"Relation Manager",
     desc: "Building strong client relationships to ensure trust, loyalty, and satisfaction",

@@ -1,5 +1,5 @@
 {
-  "name": "zain_x_media",
+  "name": "ifixt_pk",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -14,7 +14,7 @@
     "@tsparticles/engine": "^3.5.0",
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.5.0",
-    "gsap": "^3.12.5",
+    "gsap": "^3.13.0",
     "lucide-react": "^0.510.0",
     "postcss": "^8.5.3",
     "react": "^18.3.1",

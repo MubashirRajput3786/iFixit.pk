@@ -10,9 +10,8 @@ const icons = {
 
 const RepairServiceCard = ({ type, title, description }) => {
   return (
-    <div className="bg-white  shadow-lg p-6 text-center hover:shadow-2xl transition-all duration-300"
-    style={{ borderRadius: "20px 0 20px 0" }}
-    >
+   <div className="bg-white cursor-pointer hover:bg-[#1AA3DD] shadow-lg p-6 text-center hover:shadow-2xl transition-all duration-300 rounded-tl-[20px] rounded-br-[20px]">
+
       <div className="mb-4 flex justify-center">{icons[type]}</div>
       <h3 className="text-xl font-semibold text-black mb-2">{title}</h3>
       <p className="text-gray-600 text-sm">{description}</p>

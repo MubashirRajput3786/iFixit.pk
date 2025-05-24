@@ -21,12 +21,12 @@ export const imageData = [
     id: 4,
     imageURL:
       "https://gaaga.wpengine.com/wp-content/uploads/2023/06/Gaaga-Side-Menu-Contact-Img.png",
-    name: "Contact",
+    name: "shop",
   },
   {
     id: 5,
     imageURL:
       "https://gaaga.wpengine.com/wp-content/uploads/2023/06/Gaaga-Side-Menu-Projects-Img.png",
-    name: "shop",
+    name: "contact",
   },
 ];
