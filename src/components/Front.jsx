@@ -38,7 +38,7 @@ const Front = () => {
                   </div>
                 </div>
               </div>
-              <div className="col-sm-7 col-9 d-flex flex-column gap-4">
+              <div className="col-sm-7 col-9 d-flex flex-column gap-2">
                 <div className="d-flex gap-3 align-items-center">
                   <div className="bar-front"></div>
                   <div className="dot">
@@ -62,7 +62,7 @@ const Front = () => {
   
   </h1>
   </h1>
-                <p className="text-secondary">
+                <p className="lg:text-gray-400 sm:text-white">
                 Using original manufactured parts and components, we are able to
                 restore your cell phones or iDevice to like-new condition.
                 </p>
@@ -77,7 +77,7 @@ const Front = () => {
                       <div className="video-icon">
                         <FaPlay className="play" size={20} />
                       </div>
-                       View Video
+                      <span className="text-white">View Video </span>
                   </a>
 
                 </div>
