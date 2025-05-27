@@ -1,16 +1,11 @@
-
 import React from "react";
 import Header from "./Header";
+import { Outlet } from "react-router-dom";
 
-import { Outlet, useLocation } from "react-router-dom";
-
-const Layout = () => {
-  const location = useLocation();
-  const isHome = location.pathname === "/";
-
+const Layout = ({ open, setOpen }) => {
   return (
     <>
-      {!isHome && <Header />}
+      <Header open={open} setOpen={setOpen} />
       <Outlet />
     </>
   );

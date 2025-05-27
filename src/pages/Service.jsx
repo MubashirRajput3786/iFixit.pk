@@ -30,7 +30,11 @@ const Service = () => {
                 Our Services
               </h2>
             </div>
+           
           </div>
+          <div className="w-full"><h2 className="text-3xl text-white font-bold text-right  m-10">
+          All Services Come with a 30-Day Warranty
+</h2></div>
 
           <MobileRepairServices />
         </div>

@@ -2,10 +2,17 @@ import React, { useState } from "react";
 import { RxCross1 } from "react-icons/rx";
 import { imageData } from "../data/image_data";
 import SingleImage from "./SingleImage";
+import { useNavigate } from "react-router-dom";
 
 const PopUp = ({ setOpen }) => {
-  const [showClose, setShowClose] = useState(false);
   const [image, setImage] = useState("blog");
+  const navigate = useNavigate();
+
+  const handleClick = (route) => {
+    setOpen(false);        // popup band karo
+    navigate(route);       // route par le jao
+  };
+
   return (
     <>
       <div
@@ -15,6 +22,7 @@ const PopUp = ({ setOpen }) => {
           height: "100%",
         }}
       >
+        {/* Close Button */}
         <div
           className="close position-absolute p-4 "
           style={{
@@ -25,33 +33,31 @@ const PopUp = ({ setOpen }) => {
           <RxCross1
             className="text-red "
             size={40}
-            style={{
-              transition: "all 0.4s",
-            }}
+            style={{ transition: "all 0.4s" }}
             onClick={() => setOpen(false)}
           />
         </div>
 
-        <div className="blob-images w-50  position-relative  ">
+        {/* Images Area */}
+        <div className="blob-images w-50 position-relative">
           {imageData?.map((item, index) => {
             return <SingleImage key={index} {...item} image={image} />;
           })}
         </div>
 
+        {/* Clickable Items List */}
         <ul className="list-unstyled stroke-items display-1 text-uppercase w-25">
-          {imageData?.map((item, index) => {
-            return (
-              <>
-                <li
-                  key={index}
-                  className="stroke"
-                  onMouseOver={() => setImage(item?.name)}
-                >
-                  {item?.name}
-                </li>
-              </>
-            );
-          })}
+          {imageData?.map((item, index) => (
+            <li
+              key={index}
+              className="stroke"
+              onMouseOver={() => setImage(item?.name)}
+              onClick={() => handleClick(item?.route)} // 👈 route par navigate
+              style={{ cursor: "pointer" }} // optional: cursor pointer
+            >
+              {item?.name}
+            </li>
+          ))}
         </ul>
       </div>
     </>

@@ -1,32 +1,29 @@
+// src/data/image_data.js
+
 export const imageData = [
   {
-    id: 1,
-    imageURL:
-      "https://www.shutterstock.com/image-vector/phone-repair-service-disassembled-smartphone-600nw-1965677689.jpg",
     name: "Home",
+    route: "/",
+    imageURL: "https://www.shutterstock.com/image-vector/phone-repair-service-disassembled-smartphone-600nw-1965677689.jpg",
   },
   {
-    id: 2,
-    imageURL:
-      "https://gaaga.wpengine.com/wp-content/uploads/2023/06/Gaaga-Side-Menu-Career-Img.png",
     name: "Services",
+    route: "/Service",
+    imageURL: "https://gaaga.wpengine.com/wp-content/uploads/2023/06/Gaaga-Side-Menu-Career-Img.png",
   },
   {
-    id: 3,
-    imageURL:
-      "https://gaaga.wpengine.com/wp-content/uploads/2023/06/Gaaga-Side-Menu-Contact-Img.png",
     name: "About",
+    route: "/About_us",
+    imageURL: "https://gaaga.wpengine.com/wp-content/uploads/2023/06/Gaaga-Side-Menu-Contact-Img.png",
   },
   {
-    id: 4,
-    imageURL:
-      "https://gaaga.wpengine.com/wp-content/uploads/2023/06/Gaaga-Side-Menu-Contact-Img.png",
-    name: "shop",
+    name: "Shop",
+    route: "/Shop",
+    imageURL: "https://gaaga.wpengine.com/wp-content/uploads/2023/06/Gaaga-Side-Menu-Contact-Img.png",
   },
   {
-    id: 5,
-    imageURL:
-      "https://gaaga.wpengine.com/wp-content/uploads/2023/06/Gaaga-Side-Menu-Projects-Img.png",
-    name: "contact",
+    name: "Contact",
+    route: "/contact",
+    imageURL: "https://gaaga.wpengine.com/wp-content/uploads/2023/06/Gaaga-Side-Menu-Projects-Img.png",
   },
 ];

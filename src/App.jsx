@@ -12,32 +12,29 @@ import Shop from "./pages/Shop";
 import Contact from "./pages/Contact";
 import Layout from "./components/Layout";
 import RingLoader from "./components/LoadingSpinner";
+import PopUp from "./components/PopUp";
 import "./globals.css";
 
-const AppContent = () => {
+const AppContent = ({ open, setOpen }) => {
   const location = useLocation();
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     setLoading(true);
-
     const handle = requestAnimationFrame(() => {
       setLoading(false);
     });
-
     return () => cancelAnimationFrame(handle);
   }, [location]);
 
   return (
     <>
       {loading && <RingLoader />}
+      {open && <PopUp setOpen={setOpen} />}
 
       <Routes>
-        {/* Home route without layout */}
-        <Route path="/" element={<Home />} />
-
-        {/* All other routes inside Layout */}
-        <Route element={<Layout />}>
+        <Route element={<Layout open={open} setOpen={setOpen} />}> 
+          <Route path="/" element={<Home />} />
           <Route path="/Service" element={<Services />} />
           <Route path="/About_us" element={<About_us />} />
           <Route path="/Shop" element={<Shop />} />
@@ -49,9 +46,11 @@ const AppContent = () => {
 };
 
 const App = () => {
+  const [open, setOpen] = useState(false);
+
   return (
     <Router>
-      <AppContent />
+      <AppContent open={open} setOpen={setOpen} />
     </Router>
   );
 };

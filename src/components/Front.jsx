@@ -7,18 +7,16 @@ import {
   SlSocialPintarest,
   SlSocialTwitter,
 } from "react-icons/sl";
-import { FaPlay } from "react-icons/fa6";
-
 import frontImage from "../assets/images/Phone.png";
 import SlidingDiv from "./SlidingDiv";
 import Typewriter from "typewriter-effect";
-
+import VideoPopup from "./VideoPopup"; // ← New import
 
 const Front = () => {
   return (
     <>
       <div className="container-fluid position-relative">
-        <div className="row align-items-center   ">
+        <div className="row align-items-center">
           <div className="col-xl-6">
             <div className="row g-lg-4 g-sm-0 align-items-center">
               <div className="col-3 d-flex flex-column align-items-center justify-content-between gap-5">
@@ -29,7 +27,7 @@ const Front = () => {
                   <SlSocialPintarest color="gray" />
                 </div>
                 <div className="scroll">
-                  <div className="d-flex align-items-center jusitfy-content-center flex-column gap-2">
+                  <div className="d-flex align-items-center justify-content-center flex-column gap-2">
                     <Dot moving={true} />
                     <div className="bar3">
                       <div className="bar3-bar bg-secondary"></div>
@@ -48,45 +46,38 @@ const Front = () => {
                 </div>
 
                 <h1 className="display-3 fw-bold">
-  Welcome to i<span className="text">Fixit Pakistan</span>{" "}
-  {/* <GoDotFill size={25} color="#1AA3DD" /> */}
-  <h1>
-  <Typewriter
-    options={{
-      strings: ["We Replace Quality Accessories!", "We Can Fix Broken Mobile Glass!","Dead , Water Damage Full short , Half Short!",],
-      autoStart: true,
-      loop: true,
-      deleteSpeed: 50,
-    }}
-  />
-  
-  </h1>
-  </h1>
-                <p className="lg:text-gray-400 sm:text-white">
-                Using original manufactured parts and components, we are able to
-                restore your cell phones or iDevice to like-new condition.
+                  Welcome to i<span className="text">Fixit Pakistan</span>
+                  <h1>
+                    <Typewriter
+                      options={{
+                        strings: [
+                          "Smart Phones Repair Specialist.",
+                          "Quick Repair Proccess With Free Diagnostic.",
+                          "30 Days Warranty on All Repairs.",
+                          "No Repair No Charges!",
+                        ],
+                        autoStart: true,
+                        loop: true,
+                        deleteSpeed: 50,
+                      }}
+                    />
+                  </h1>
+                </h1>
+                <p className="lg:text-gray-400 sm:text-white capitalize">
+                  Get Your Smartphone fixed by expert technicians using certified tools — fast,
+                  reliable, & trusted mobile repair with a professional touch!
                 </p>
+
                 <div className="d-flex align-items-center hov justify-content-between">
                   <SlidingDiv content="Get Started" />
-                  <a
-                    href="https://www.youtube.com/watch?v=_1_H2iIQ9dY"
-                     target="_blank"
-                     rel="noopener noreferrer"
-                    className="d-flex gap-4 align-items-center text-decoration-none text-dark"
-                       >
-                      <div className="video-icon">
-                        <FaPlay className="play" size={20} />
-                      </div>
-                      <span className="text-white">View Video </span>
-                  </a>
-
+                  <VideoPopup /> {/* ← New Popup Component Here */}
                 </div>
               </div>
             </div>
           </div>
+
           <div className="col-xl-6 front-image">
             <img
-              className=""
               width={"100%"}
               height={"100%"}
               style={{ objectFit: "contain" }}
@@ -95,7 +86,6 @@ const Front = () => {
             />
           </div>
         </div>
-        
       </div>
     </>
   );
