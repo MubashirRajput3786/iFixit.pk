@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { Particless } from "../components/Particles";
 
-const Service = () => {
+const Team = () => {
   const headingRef = useRef();
 
   useEffect(() => {
@@ -22,19 +22,15 @@ const Service = () => {
           <div className="col-lg-6 p-5">
             <div className="dot-div position-relative">
               <div className="my-dot position-absolute"></div>
-              <h2
-                ref={headingRef}
-                className="display-2 fw-bold"
-              >
-                Shop
+              <h2 ref={headingRef} className="display-2 fw-bold">
+                Team
               </h2>
             </div>
           </div>
-
         </div>
       </div>
     </div>
   );
 };
 
-export default Service;
+export default Team;

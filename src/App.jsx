@@ -8,13 +8,12 @@ import {
 import Home from "./pages/Home";
 import Services from "./pages/Service";
 import About_us from "./pages/About_us";
-import Shop from "./pages/Shop";
 import Contact from "./pages/Contact";
 import Layout from "./components/Layout";
 import RingLoader from "./components/LoadingSpinner";
 import PopUp from "./components/PopUp";
 import "./globals.css";
-
+import Team from "./pages/Team"
 const AppContent = ({ open, setOpen }) => {
   const location = useLocation();
   const [loading, setLoading] = useState(false);
@@ -37,7 +36,7 @@ const AppContent = ({ open, setOpen }) => {
           <Route path="/" element={<Home />} />
           <Route path="/Service" element={<Services />} />
           <Route path="/About_us" element={<About_us />} />
-          <Route path="/Shop" element={<Shop />} />
+          <Route path="/Team" element={<Team />} />
           <Route path="/contact" element={<Contact />} />
         </Route>
       </Routes>

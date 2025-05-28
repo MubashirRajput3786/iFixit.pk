@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { Particless } from "../components/Particles";
 
-const Service = () => {
+const contact = () => {
   const headingRef = useRef();
 
   useEffect(() => {
@@ -14,7 +14,7 @@ const Service = () => {
   }, []);
 
   return (
-    <div className="relative bg-black min-h-screen">
+    <div className="relative min-h-screen">
       <Particless />
 
       <div className="relative z-10 text-white p-10">
@@ -37,4 +37,4 @@ const Service = () => {
   );
 };
 
-export default Service;
+export default contact;

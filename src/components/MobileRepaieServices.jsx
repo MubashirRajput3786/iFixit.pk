@@ -25,17 +25,17 @@ const MobileRepairServices = () => {
 
   const services = [
     { icon: <FaDatabase />, image: "/serviceImages/data-rescue.jpg", title: "Data Rescue", description: "Expert solutions to recover data from damaged devices. We handle hardware failures, water damage, and software corruption." },
-    { icon: <FaMobileAlt />, image: "/serviceImages/screen-replacment.jpg", title: "Screen Replacement", description: "Premium quality screen replacements with warranty. We use OEM or certified aftermarket parts." },
-    { icon: <FaBug />, image: "/serviceImages/data-rescue.jpg", title: "Software Troubleshooting", description: "Fix freezing, crashing, or boot loop issues with our advanced diagnostic tools." },
-    { icon: <FaChargingStation />, image: "/serviceImages/data-rescue.jpg", title: "Charging Issues", description: "Repair charging ports, replace batteries, and solve power management problems." },
-    { icon: <FaTools />, image: "/serviceImages/data-rescue.jpg", title: "Genuine OEM Parts", description: "We use only authentic manufacturer parts for all replacements and repairs." },
-    { icon: <FaHdd />, image: "/serviceImages/data-rescue.jpg", title: "Storage Replacement", description: "EMMC, UFS, and NAND chip replacements to solve storage-related issues." },
-    { icon: <FaEnvelopeOpenText />, image: "/serviceImages/data-rescue.jpg", title: "Message Removal", description: "Remove unwanted messages and notifications from your device securely." },
-    { icon: <FaSmile />, image: "/serviceImages/data-rescue.jpg", title: "Face ID Repair", description: "Specialized repair services for Face ID and biometric sensor issues." },
-    { icon: <FaWindowRestore />, image: "/serviceImages/data-rescue.jpg", title: "Glass Repair", description: "Professional front and back glass replacement with precision tools." },
-    { icon: <FaBolt />, image: "/serviceImages/data-rescue.jpg", title: "Short Circuit Repair", description: "Diagnose and repair half and full short circuit issues in mobile devices." },
-    { icon: <FaTint />, image: "/serviceImages/data-rescue.jpg", title: "Liquid Damage", description: "Advanced cleaning and repair for water-damaged devices with corrosion treatment." },
-    { icon: <FaRocket />, image: "/serviceImages/data-rescue.jpg", title: "Performance Boost", description: "Hardware and software optimization to restore your device's peak performance." },
+    { icon: <FaMobileAlt />, image: "/serviceImages/screen-replacment.jpg", title: "Screen Replacement", description: "Premium quality screen replacements . We use OEM or certified aftermarket parts." },
+    { icon: <FaBug />, image: "/serviceImages/trouble-shoot.jpg", title: "Software Troubleshooting", description: "Fix freezing, crashing, or boot loop issues with our advanced diagnostic tools." },
+    { icon: <FaChargingStation />, image: "/serviceImages/charging-issue.jpg", title: "Charging Issues", description: "Repair charging ports, replace batteries, and solve power management problems." },
+    { icon: <FaTools />, image: "/serviceImages/genuine.jpg", title: "Genuine OEM Parts", description: "We use only authentic manufacturer parts for all replacements and repairs." },
+    { icon: <FaHdd />, image: "/serviceImages/storage.jpg", title: "Storage Replacement", description: "EMMC, UFS, and NAND chip replacements to solve storage-related issues." },
+    { icon: <FaEnvelopeOpenText />, image: "/serviceImages/message.jpg", title: "Message Removal", description: "Remove unwanted messages and notifications from your device securely." },
+    { icon: <FaSmile />, image: "/serviceImages/face.jpg", title: "Face ID Repair", description: "Specialized repair services for Face ID and biometric sensor issues." },
+    { icon: <FaWindowRestore />, image: "/serviceImages/glass.jpg", title: "Glass Repair", description: "Professional front and back glass replacement with precision tools." },
+    { icon: <FaBolt />, image: "/serviceImages/short.jpg", title: "Short Circuit Repair", description: "Diagnose and repair half and full short circuit issues in mobile devices." },
+    { icon: <FaTint />, image: "/serviceImages/water.jpg", title: "Liquid Damage", description: "Advanced cleaning and repair for water-damaged devices with corrosion treatment." },
+    { icon: <FaRocket />, image: "/serviceImages/boost.jpg", title: "Performance Boost", description: "Hardware and software optimization to restore your device's peak performance." },
   ];
 
   useEffect(() => {
@@ -95,7 +95,7 @@ const MobileRepairServices = () => {
                 {/* Front Side */}
                 <div className="card-face absolute w-full h-full rounded-xl flex flex-col items-center justify-center overflow-hidden">
   <div
-    className="h-full w-full relative bg-cover bg-center"
+    className="h-full w-full ß  bg-cover bg-center"
     style={{ backgroundImage: `url(${service.image})` }}
   >
     {/* Light transparent overlay without blur */}

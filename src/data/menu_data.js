@@ -16,8 +16,8 @@ export const menu_data = [
   },
   {
     id: 4,
-    name: "Shop",
-    link: "/Shop",
+    name: "Team",
+    link: "/team",
   },
   {
     id: 5,

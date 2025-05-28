@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { Particless } from "../components/Particles";
 
-const Service = () => {
+const about_us = () => {
   const headingRef = useRef();
 
   useEffect(() => {
@@ -37,4 +37,4 @@ const Service = () => {
   );
 };
 
-export default Service;
+export default about_us;

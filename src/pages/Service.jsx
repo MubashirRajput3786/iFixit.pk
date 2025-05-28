@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { Particless } from "../components/Particles";
 import MobileRepairServices from "../components/MobileRepaieServices";
+import AnimatedButton from "../components/AnimatedButton";
 
 const Service = () => {
   const headingRef = useRef();
@@ -20,25 +21,34 @@ const Service = () => {
 
       <div className="relative z-10 text-white p-10">
         <div className="max-w-7xl mx-auto px-4">
+          {/* Heading */}
           <div className="col-lg-6 p-5">
             <div className="dot-div position-relative">
               <div className="my-dot position-absolute"></div>
-              <h2
-                ref={headingRef}
-                className="display-2 fw-bold"
-              >
+              <h2 ref={headingRef} className="display-2 fw-bold">
                 Our Services
               </h2>
             </div>
-           
           </div>
-          <div className="w-full"><h2 className="text-3xl text-white font-bold text-right  m-10">
-          All Services Come with a 30-Day Warranty
-</h2></div>
 
+          {/* Animated Button Centered */}
+         
+
+          {/* Warranty Text - Only on md and up */}
+          <div className="w-full my-3 hidden md:block">
+            <h2 className="text-3xl text-white font-bold text-right m-10">
+              All Services Come with a 30-Day Warranty
+            </h2>
+          </div>
+
+          {/* Animated Service Cards */}
           <MobileRepairServices />
-        </div>
+          <div className="flex justify-center my-6">
+            <AnimatedButton content={"Book My Repair"} />
+          </div>
       </div>
+        </div>
+        
     </div>
   );
 };
