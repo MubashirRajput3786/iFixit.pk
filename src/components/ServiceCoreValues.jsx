@@ -46,7 +46,7 @@ const ServiceCoreValues = () => {
         <div className="lg:w-2/3 flex flex-col justify-between">
         <div className="relative mb-10 flex justify-center">
   <div className="relative inline-block text-center">
-    <span className="text-9xl md:text-5xl font-extrabold text-white z-999">
+    <span className="text-5xl md:text-5xl font-extrabold text-white z-999">
       Our Core Values
     </span>
   </div>
