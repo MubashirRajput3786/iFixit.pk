@@ -19,7 +19,7 @@ const Gallery = () => {
         <div className="col-lg-3 col-sm-6 mb-4">
           <Cards contentNumber={0} />
         </div>
-        <div className="col-lg-6 col-sm-6 mb-4">
+        <div className="col-lg-5 col-sm-6 mb-4">
           <Cards contentNumber={1} />
         </div>
         <div className="col-lg-3 col-sm-6 mb-4">

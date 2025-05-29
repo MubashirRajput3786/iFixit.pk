@@ -37,7 +37,7 @@ const Service = () => {
           {/* Warranty Text - Only on md and up */}
           <div className="w-full my-3 hidden md:block">
             <h2 className="text-3xl text-white font-bold text-right m-10">
-              All Services Come with a 30-Day Warranty
+              All Services Come with a 30-Days Warranty*
             </h2>
           </div>
 

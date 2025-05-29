@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { Particless } from "../components/Particles";
-import ContactForm from "../components/ContactForm";
+import CustomerCareForm from "../components/CustomerCareForm";
 
 const contact = () => {
   const headingRef = useRef();
@@ -31,8 +31,9 @@ const contact = () => {
               </h2>
             </div>
           </div>
-<ContactForm/>
+
         </div>
+        <CustomerCareForm />
       </div>
     </div>
   );
