@@ -14,16 +14,16 @@ const CallToAction = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % imageUrls.length);
-    }, 6000); // 1 minute
+    }, 6000); // 6 seconds for demo
 
     return () => clearInterval(interval);
   }, []);
 
   return (
     <section className="relative text-white min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background image with fade transition */}
+      {/* Background image always centered and covered on all screens */}
       <div
-        className="absolute inset-0 bg-cover bg-center transition-all duration-1000 ease-in-out"
+        className="absolute inset-0 bg-center bg-cover transition-all duration-1000 ease-in-out"
         style={{
           backgroundImage: `url(${imageUrls[currentImage]})`,
           zIndex: -2,
@@ -49,7 +49,7 @@ const CallToAction = () => {
           to="/contact"
           className="inline-block bg-sky-500 hover:bg-sky-400 text-white font-semibold text-lg px-8 py-4 rounded-full shadow-lg transition-all duration-300 hover:scale-105"
         >
-          Contact Customer Care
+          <button>Contact Customer Care</button>
         </Link>
       </div>
     </section>
