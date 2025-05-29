@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { Particless } from "../components/Particles";
-import MobileRepairServices from "../components/MobileRepaieServices";
+import MobileRepairServices from "../components/MobileRepairServices";
 import AnimatedButton from "../components/AnimatedButton";
 
 const Service = () => {
@@ -43,7 +43,7 @@ const Service = () => {
 
           {/* Animated Service Cards */}
           <MobileRepairServices />
-          <div className="flex justify-center my-6">
+          <div className="flex justify-center  my-6">
             <AnimatedButton content={"Book My Repair"} />
           </div>
       </div>

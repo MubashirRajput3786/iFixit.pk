@@ -580,4 +580,180 @@ color :#1AA3DD;
   text-transform: capitalize;
 }
 
-/* card animation */
+/* booking form */
+
+
+
+.booking-form-container {
+  max-width: 100%;
+  width: 100%;
+  padding: 20px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.booking-form h2 {
+  color: #2f3542;
+  margin-bottom: 8px;
+  font-size: 24px;
+}
+
+.booking-form p {
+  color: #747d8c;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.booking-input, .booking-textarea, .booking-date-picker {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.booking-input.error, .booking-date-picker.error {
+  border-color: #ff4757;
+  background-color: rgba(255, 71, 87, 0.05);
+}
+
+.booking-input:focus, .booking-textarea:focus, .booking-date-picker:focus {
+  border-color: #4b7bec;
+  box-shadow: 0 0 0 3px rgba(75, 123, 236, 0.2);
+  outline: none;
+}
+
+.booking-input::placeholder, .booking-textarea::placeholder {
+  color: #b2b2b2;
+}
+
+.booking-textarea {
+  resize: none;
+}
+
+.date-picker-wrapper {
+  width: 100%;
+}
+
+.date-picker-wrapper .react-datepicker-wrapper {
+  width: 100%;
+}
+
+.guest-selector {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  background: white;
+}
+
+.guest-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.guest-button {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid #4b7bec;
+  background: white;
+  color: #4b7bec;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.guest-button:hover {
+  background: #4b7bec;
+  color: white;
+}
+
+.guest-count {
+  font-size: 18px;
+  font-weight: 600;
+  min-width: 20px;
+  text-align: center;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, #4b7bec, #6a5acd);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.submit-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.loader {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid white;
+  border-radius: 50%;
+  border-top-color: transparent;
+}
+
+.error-text {
+  color: #ff4757;
+  font-size: 14px;
+  margin-top: 5px;
+  overflow: hidden;
+}
+
+.success-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px;
+}
+
+.success-message svg {
+  color: #4b7bec;
+  margin-bottom: 20px;
+}
+
+.success-message h3 {
+  color: #2f3542;
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+.success-message p {
+  color: #747d8c;
+  font-size: 16px;
+  margin: 0;
+}

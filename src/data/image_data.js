@@ -17,8 +17,8 @@ export const imageData = [
     imageURL: "https://gaaga.wpengine.com/wp-content/uploads/2023/06/Gaaga-Side-Menu-Contact-Img.png",
   },
   {
-    name: "Shop",
-    route: "/Shop",
+    name: "Team",
+    route: "/Team",
     imageURL: "https://gaaga.wpengine.com/wp-content/uploads/2023/06/Gaaga-Side-Menu-Contact-Img.png",
   },
   {

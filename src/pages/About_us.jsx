@@ -1,6 +1,9 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { Particless } from "../components/Particles";
+  import MobileRepairIntro from "../components/MobileRepairIntro";
+  import ServiceCoreValues from "../components/ServiceCoreValues";
+  import WorkingProcess from "../components/WorkingProcess"
 
 const about_us = () => {
   const headingRef = useRef();
@@ -30,9 +33,14 @@ const about_us = () => {
               </h2>
             </div>
           </div>
-
+          
+          
         </div>
+        <MobileRepairIntro/>
+       
       </div>
+      <ServiceCoreValues />
+      <WorkingProcess/>
     </div>
   );
 };

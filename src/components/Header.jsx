@@ -5,11 +5,12 @@ import { IoMdClose } from "react-icons/io";
 import { MdHorizontalRule } from "react-icons/md";
 import { GoChevronRight } from "react-icons/go";
 import { menu_data } from "../data/menu_data";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "../assets/images/iFixit Logo CDR.png";
 
 const Header = ({ open, setOpen }) => {
   const location = useLocation();
+  const navigate = useNavigate(); // ✅ Add this to use navigation
 
   return (
     <>
@@ -45,7 +46,9 @@ const Header = ({ open, setOpen }) => {
         </ul>
 
         <div className="d-flex align-items-center gap-5">
-          <Button content="Book My Repair" />
+          {/* ✅ Pass onClick handler to navigate */}
+          <Button content="Book My Repair" onClick={() => navigate("/form")} />
+
           <div
             onClick={() => setOpen(true)}
             className="d-flex flex-column gap-3 line-parent"

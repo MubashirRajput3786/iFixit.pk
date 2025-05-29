@@ -13,7 +13,9 @@ import Layout from "./components/Layout";
 import RingLoader from "./components/LoadingSpinner";
 import PopUp from "./components/PopUp";
 import "./globals.css";
-import Team from "./pages/Team"
+import Team from "./pages/Team";
+import Form from "./pages/Form"; // ✅ Capital 'F'
+
 const AppContent = ({ open, setOpen }) => {
   const location = useLocation();
   const [loading, setLoading] = useState(false);
@@ -31,15 +33,17 @@ const AppContent = ({ open, setOpen }) => {
       {loading && <RingLoader />}
       {open && <PopUp setOpen={setOpen} />}
 
-      <Routes>
-        <Route element={<Layout open={open} setOpen={setOpen} />}> 
-          <Route path="/" element={<Home />} />
-          <Route path="/Service" element={<Services />} />
-          <Route path="/About_us" element={<About_us />} />
-          <Route path="/Team" element={<Team />} />
-          <Route path="/contact" element={<Contact />} />
-        </Route>
-      </Routes>
+     
+<Routes>
+  <Route element={<Layout open={open} setOpen={setOpen} />}> 
+    <Route path="/" element={<Home />} />
+    <Route path="/Service" element={<Services />} />
+    <Route path="/About_us" element={<About_us />} />
+    <Route path="/Team" element={<Team />} />
+    <Route path="/contact" element={<Contact />} />
+    <Route path="/form" element={<Form />} /> {/* ✅ Corrected here */}
+  </Route>
+</Routes>
     </>
   );
 };
