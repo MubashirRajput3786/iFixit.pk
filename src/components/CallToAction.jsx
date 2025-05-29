@@ -1,22 +1,37 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { MdSupportAgent } from 'react-icons/md'; // React Icons
 
+const imageUrls = [
+  'https://humenglish.com/wp-content/uploads/2024/09/iPhone-16-price-in-Pakistan-SMK-MOJO-222-Sadaan-1024x576.jpg',
+  'https://blog.metrofone.co.uk/wp-content/uploads/2020/10/iphone-12-pro-max-deals.jpg',
+  'https://www.notebookcheck.net/fileadmin/_processed_/a/8/csm_Apple_iPhone_16_Pro_Concept2_619ca17f5b.jpg',
+];
+
 const CallToAction = () => {
+  const [currentImage, setCurrentImage] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % imageUrls.length);
+    }, 6000); // 1 minute
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section className="relative text-white min-h-screen flex items-center justify-center">
-      {/* Background image with responsive positioning */}
+    <section className="relative text-white min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background image with fade transition */}
       <div
-        className="absolute inset-0 bg-no-repeat bg-center bg-contain sm:bg-cover sm:bg-top"
+        className="absolute inset-0 bg-cover bg-center transition-all duration-1000 ease-in-out"
         style={{
-          backgroundImage:
-            "url('https://www.apple.com/v/iphone-16-pro/f/images/overview/product-stories/design/display__f5509jfp9nyq_xlarge.jpg')",
+          backgroundImage: `url(${imageUrls[currentImage]})`,
           zIndex: -2,
         }}
       />
-      
+
       {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/50 z-[-1]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/60 z-[-1]" />
 
       {/* Content */}
       <div className="max-w-4xl mx-auto text-center px-6">
@@ -34,7 +49,7 @@ const CallToAction = () => {
           to="/contact"
           className="inline-block bg-sky-500 hover:bg-sky-400 text-white font-semibold text-lg px-8 py-4 rounded-full shadow-lg transition-all duration-300 hover:scale-105"
         >
-          <button>Contact Customer Care</button>
+          Contact Customer Care
         </Link>
       </div>
     </section>
