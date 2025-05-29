@@ -34,12 +34,12 @@ const WorkingProcess = () => {
   return (
     <section className="bg-black bg-opacity-90 text-white py-16 px-6">
       <div className="max-w-7xl mx-auto text-center">
-      <h2 className="text-center display-4 fw-bold mb-5">Working process</h2>
+      <h2 className="text-center display-4 fw-bold mb-5">How it Works</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
           {steps.map((step, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 40 }} 
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
               viewport={{ once: true }}

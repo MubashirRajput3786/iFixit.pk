@@ -1,11 +1,14 @@
 import React from "react";
 import Dot from "./Dot";
 import { GoDotFill } from "react-icons/go";
+import { PiTiktokLogoLight } from "react-icons/pi";
+import { PiYoutubeLogoLight } from "react-icons/pi";
+
+
 import {
   SlSocialFacebook,
   SlSocialInstagram,
-  SlSocialPintarest,
-  SlSocialTwitter,
+ 
 } from "react-icons/sl";
 import frontImage from "../assets/images/Phone.png";
 import SlidingDiv from "./SlidingDiv";
@@ -23,8 +26,8 @@ const Front = () => {
                 <div className="d-flex gap-5 flex-column fs-2 justify-content-between align-items-end">
                   <SlSocialFacebook color="gray" />
                   <SlSocialInstagram color="gray" />
-                  <SlSocialTwitter color="gray" />
-                  <SlSocialPintarest color="gray" />
+                  <PiYoutubeLogoLight color="gray" />
+                  <PiTiktokLogoLight color="gray" />
                 </div>
                 <div className="scroll">
                   <div className="d-flex align-items-center justify-content-center flex-column gap-2">

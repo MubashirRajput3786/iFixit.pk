@@ -3,6 +3,7 @@ import gsap from "gsap";
 import { Particless } from "../components/Particles";
 import Cards from '../components/Cards';
 import Gallery from "../components/Gallery";
+import CallToAction from "../components/CallToAction";
 
 const Team = () => {
   const headingRef = useRef();
@@ -31,6 +32,7 @@ const Team = () => {
           </div>
         </div>
 <Gallery />
+<CallToAction />
       </div>
     </div>
   );

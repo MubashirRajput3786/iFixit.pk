@@ -7,13 +7,13 @@ const values = [
     icon: <FaThumbsUp className="text-sky-500 text-2xl" />,
     title: 'Positive & Optimistic',
     description:
-      "Being hopeless is a sin for a Muslim. Because hope is the only thing that keeps us alive even after everything is lost. That's why a person should look at everything positively.",
+      "Being hopeless is not acceptable in Islam, as hope is what keeps us going even when everything seems lost. That’s why a person should strive to view everything with a positive outlook.",
   },
   {
     icon: <FaHeart className="text-sky-500 text-2xl" />,
     title: 'Love Customer',
     description:
-      "We consider our customers as our family. That's why every one of our customer's work is done with special care and integrity. And what makes his work complete within the given time.",
+      "We treat every customer like family—with respect, care, and genuine attention. Loving our customers means listening to their needs, going the extra mile, and always putting their satisfaction first. Their trust drives us to serve with heart.",
   },
   {
     icon: <FaStar className="text-sky-500 text-2xl" />,
@@ -25,7 +25,7 @@ const values = [
     icon: <FaHandsHelping className="text-sky-500 text-2xl" />,
     title: 'Have Integrity',
     description:
-      "Honesty is the best strategy. That's why we consider it our faith to do our customer's work sincerely and with complete honesty. Working honestly increases your customer base and multiplies your growth.",
+      "We consider our customers part of our family. That’s why every task we handle is done with care, integrity, and honesty—doing the right thing even when no one is watching. We are committed to completing every job on time and with the highest level of trust.",
   },
 ];
 
