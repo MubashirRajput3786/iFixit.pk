@@ -16,13 +16,18 @@ const Gallery = () => {
       <h2 className="text-center display-4 fw-bold mb-5">Meet Our Team</h2>
 
       <div className="row justify-content-center align-items-center">
-        <div className="col-lg-3 col-sm-6 mb-4">
+        {/* Mobile: Show CEO first, Desktop: Show at left */}
+        <div className="col-lg-3 col-sm-6 mb-4 order-2 order-lg-1">
           <Cards contentNumber={0} />
         </div>
-        <div className="col-lg-5 col-sm-6 mb-4">
+        
+        {/* Mobile: Show CEO first, Desktop: Show at center (larger) */}
+        <div className="col-lg-5 col-sm-6 mb-4 order-1 order-lg-2">
           <Cards contentNumber={1} />
         </div>
-        <div className="col-lg-3 col-sm-6 mb-4">
+        
+        {/* Mobile: Show third, Desktop: Show at right */}
+        <div className="col-lg-3 col-sm-6 mb-4 order-3 order-lg-3">
           <Cards contentNumber={2} />
         </div>
       </div>

@@ -16,7 +16,7 @@ const CoreValue = () => {
           <h2 className="display-2 fw-bold">Our Core Values</h2>
         </div>
 
-        <div className="d-flex flex-column gap-4 mt-4 mb-5">
+        <div className="d-flex flex-column gap-4 mt-5 mb-5">
           <div>
             <div className="d-flex align-items-center gap-3">
               <FaRegThumbsUp className="text fs-4" />
