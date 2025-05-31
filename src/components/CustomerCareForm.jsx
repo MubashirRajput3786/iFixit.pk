@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { MessageCircle, Send, User, Mail, Phone, FileText, MessageSquare, AlertTriangle, ChevronDown, Smartphone } from "lucide-react";
+import { MessageCircle, Send, User, Mail, Phone, FileText, MessageSquare, AlertTriangle, ChevronDown, Smartphone, Wrench, Shield, Clock, Award } from "lucide-react";
 
 const CustomerCareForm = () => {
   const [form, setForm] = useState({
@@ -17,11 +17,12 @@ const CustomerCareForm = () => {
   const [toasts, setToasts] = useState([]);
   const [showFaultDropdown, setShowFaultDropdown] = useState(false);
   const [showBrandDropdown, setShowBrandDropdown] = useState(false);
-  const [dropdownPosition, setDropdownPosition] = useState("below"); // New state for fault dropdown position
+  const [faultDropdownPosition, setFaultDropdownPosition] = useState("above");
+  const [brandDropdownPosition, setBrandDropdownPosition] = useState("above");
   const brandInputRef = useRef(null);
   const brandDropdownRef = useRef(null);
   const faultDropdownRef = useRef(null);
-  const faultInputRef = useRef(null); // New ref for fault input
+  const faultInputRef = useRef(null);
 
   // Phone brands
   const phoneBrands = [
@@ -78,7 +79,6 @@ const CustomerCareForm = () => {
       items: [
         "Device Unlocking",
         "Data Recovery",
-       
         "General Consultation",
         "Physical Damage Assessment",
         "Warranty Claim Support",
@@ -108,39 +108,54 @@ const CustomerCareForm = () => {
       }
     };
 
-    const updateDropdownPosition = () => {
+    const updateDropdownPositions = () => {
+      // Update fault dropdown position
       if (faultInputRef.current && showFaultDropdown) {
         const inputRect = faultInputRef.current.getBoundingClientRect();
         const windowHeight = window.innerHeight;
-        const dropdownHeight = 300; // Estimated dropdown height (adjust if needed)
+        const dropdownHeight = 300;
 
-        // Check if there's enough space below the input
         const spaceBelow = windowHeight - inputRect.bottom;
         const spaceAbove = inputRect.top;
 
         if (spaceBelow < dropdownHeight && spaceAbove > dropdownHeight) {
-          setDropdownPosition("above");
+          setFaultDropdownPosition("above");
         } else {
-          setDropdownPosition("below");
+          setFaultDropdownPosition("above"); // Always set to above as requested
+        }
+      }
+
+      // Update brand dropdown position
+      if (brandInputRef.current && showBrandDropdown) {
+        const inputRect = brandInputRef.current.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        const dropdownHeight = 240;
+
+        const spaceBelow = windowHeight - inputRect.bottom;
+        const spaceAbove = inputRect.top;
+
+        if (spaceBelow < dropdownHeight && spaceAbove > dropdownHeight) {
+          setBrandDropdownPosition("above");
+        } else {
+          setBrandDropdownPosition("above"); // Always set to above as requested
         }
       }
     };
 
     document.addEventListener("mousedown", handleClickOutside);
-    window.addEventListener("resize", updateDropdownPosition);
-    window.addEventListener("scroll", updateDropdownPosition);
+    window.addEventListener("resize", updateDropdownPositions);
+    window.addEventListener("scroll", updateDropdownPositions);
 
-    // Update position when dropdown opens
-    if (showFaultDropdown) {
-      updateDropdownPosition();
+    if (showFaultDropdown || showBrandDropdown) {
+      updateDropdownPositions();
     }
 
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
-      window.removeEventListener("resize", updateDropdownPosition);
-      window.removeEventListener("scroll", updateDropdownPosition);
+      window.removeEventListener("resize", updateDropdownPositions);
+      window.removeEventListener("scroll", updateDropdownPositions);
     };
-  }, [showFaultDropdown]);
+  }, [showFaultDropdown, showBrandDropdown]);
 
   const showToast = (message, type = 'info', duration = 4000) => {
     const id = Date.now();
@@ -258,7 +273,8 @@ Sent via Customer Care Form`;
   const showMessageField = form.fault === "Other issue not listed";
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4">
+    <div className="min-h-screen ">
+      {/* Toast notifications */}
       <div className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 space-y-2">
         {toasts.map((toast) => (
           <div
@@ -270,262 +286,323 @@ Sent via Customer Care Form`;
         ))}
       </div>
 
-      <div className="relative w-full sm:w-auto">
-        <div className="backdrop-blur-xl bg-white/10 border border-white/20 rounded-3xl shadow-2xl overflow-hidden w-full sm:w-96 md:w-[500px] lg:w-[600px] xl:w-[700px]">
-          <div className="bg-gradient-to-r from-[#1aa3dd] to-[#0d7fb5] p-4">
-            <div className="flex items-center justify-between">
-              <div className="flex-shrink-0">
-                <div className="h-12 w-12 bg-white/20 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">iFixit</span>
+      <div className="flex flex-col lg:flex-row min-h-screen">
+        {/* Left Side - Content */}
+        <div className="lg:w-1/2 flex items-center justify-center p-8 lg:p-16">
+          <div className="max-w-lg text-center lg:text-left">
+            <div className="mb-8">
+              <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-[#1aa3dd] to-[#0d7fb5] rounded-2xl mb-6">
+                <Wrench className="w-10 h-10 text-white" />
+              </div>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
+                iFixit
+                <span className="block text-2xl md:text-3xl lg:text-4xl font-normal text-white/80 mt-2">
+                  Customer Care
+                </span>
+              </h1>
+              <p className="text-lg md:text-xl text-white/70 leading-relaxed">
+                Expert mobile phone repair services. We fix it right, we fix it fast.
+              </p>
+            </div>
+
+            <div className="space-y-6">
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center">
+                  <Shield className="w-6 h-6 text-[#1aa3dd]" />
+                </div>
+                <div>
+                  <h3 className="text-white font-semibold text-lg mb-1">Quality Guaranteed</h3>
+                  <p className="text-white/60">Professional repair with genuine parts and warranty</p>
                 </div>
               </div>
-              <div className="text-right flex-1 ml-4">
-                <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-1">Customer Care</h1>
-                <p className="text-white/80 text-xs md:text-sm lg:text-base">We're here to help you 24/7</p>
+
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center">
+                  <Clock className="w-6 h-6 text-[#1aa3dd]" />
+                </div>
+                <div>
+                  <h3 className="text-white font-semibold text-lg mb-1">Quick Response</h3>
+                  <p className="text-white/60">Fast turnaround time for most repairs</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center">
+                  <Award className="w-6 h-6 text-[#1aa3dd]" />
+                </div>
+                <div>
+                  <h3 className="text-white font-semibold text-lg mb-1">Expert Technicians</h3>
+                  <p className="text-white/60">Certified professionals with years of experience</p>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div className="p-4 md:p-6 lg:p-8 space-y-4 md:space-y-5 lg:space-y-6">
-            <div className="space-y-4 md:space-y-5 lg:space-y-6">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-5 lg:gap-6">
-                {formFields.map(({ name, label, type, icon: Icon, placeholder }) => (
-                  <div key={name} className="space-y-1">
-                    <label className="text-white/90 text-xs md:text-sm font-medium flex items-center gap-1">
-                      <Icon className="w-3 h-3 md:w-4 md:h-4 text-[#1aa3dd]" />
-                      {label} *
+            <div className="mt-8 p-4 bg-white/5 rounded-xl border border-white/10">
+              <p className="text-white/80 text-sm">
+                📱 <strong>24/7 Support Available</strong><br />
+                Contact us anytime for urgent repairs or queries
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Right Side - Form */}
+        <div className="lg:w-1/2 flex items-center justify-center p-4 lg:p-8">
+          <div className="w-full">
+            <div className="backdrop-blur-xl bg-white/10 border border-white/20 rounded-3xl shadow-2xl overflow-hidden">
+              <div className="bg-gradient-to-r from-[#1aa3dd] to-[#0d7fb5] p-6">
+                <div className="text-center">
+                  <h2 className="text-2xl font-bold text-white mb-2">Get Help Now</h2>
+                  <p className="text-white/80 text-sm">Fill out the form below and we'll get back to you</p>
+                </div>
+              </div>
+
+              <div className="p-6 space-y-5">
+                <div className="space-y-5">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {formFields.map(({ name, label, type, icon: Icon, placeholder }) => (
+                      <div key={name} className="space-y-1">
+                        <label className="text-white/90 text-sm font-medium flex items-center gap-1">
+                          <Icon className="w-4 h-4 text-[#1aa3dd]" />
+                          {label} *
+                        </label>
+                        <div className="relative">
+                          <input
+                            type={type}
+                            name={name}
+                            value={form[name]}
+                            onChange={handleChange}
+                            onFocus={() => setFocusedField(name)}
+                            onBlur={() => setFocusedField("")}
+                            placeholder={placeholder}
+                            required
+                            className={`w-full px-4 py-3 bg-white/5 border rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-1 transition-all duration-300 text-sm ${
+                              focusedField === name
+                                ? "border-[#1aa3dd] focus:ring-[#1aa3dd]/30 bg-white/10"
+                                : "border-white/20 hover:border-white/30"
+                            }`}
+                          />
+                          <div className={`absolute bottom-0 left-0 h-0.5 bg-[#1aa3dd] transition-all duration-300 ${
+                            focusedField === name ? "w-full" : "w-0"
+                          }`}></div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="space-y-1">
+                      <label className="text-white/90 text-sm font-medium flex items-center gap-1">
+                        <Smartphone className="w-4 h-4 text-[#1aa3dd]" />
+                        Phone Brand *
+                      </label>
+                      <div className="relative" ref={brandInputRef}>
+                        <input
+                          type="text"
+                          name="brand"
+                          value={form.brand}
+                          onChange={handleChange}
+                          onClick={handleBrandInputClick}
+                          onFocus={() => {
+                            setFocusedField("brand");
+                            setShowBrandDropdown(true);
+                          }}
+                          onBlur={() => setFocusedField("")}
+                          placeholder="Select or type phone brand..."
+                          required
+                          className={`w-full px-4 py-3 bg-white/5 border rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-1 transition-all duration-300 text-sm pr-10 ${
+                            focusedField === "brand"
+                              ? "border-[#1aa3dd] focus:ring-[#1aa3dd]/30 bg-white/10"
+                              : "border-white/20 hover:border-white/30"
+                          }`}
+                        />
+                        <ChevronDown 
+                          className={`absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 transition-transform duration-200 text-white/70 ${
+                            showBrandDropdown ? 'rotate-180' : ''
+                          }`}
+                        />
+                        {showBrandDropdown && (
+                          <div 
+                            ref={brandDropdownRef}
+                            className={`absolute left-0 right-0 bg-slate-800/95 backdrop-blur-sm border border-white/20 rounded-lg shadow-xl max-h-60 overflow-y-auto z-50 ${
+                              brandDropdownPosition === "above" ? "bottom-full mb-1" : "top-full mt-1"
+                            }`}
+                          >
+                            {filteredBrands.length > 0 ? (
+                              filteredBrands.map((brand, index) => (
+                                <div
+                                  key={index}
+                                  onClick={() => handleBrandSelect(brand)}
+                                  className={`px-4 py-3 text-white hover:bg-white/10 cursor-pointer transition-colors duration-200 text-sm flex items-center ${
+                                    form.brand === brand ? "bg-white/10 text-cyan-400" : ""
+                                  }`}
+                                >
+                                  <span className="truncate">{brand}</span>
+                                  {form.brand === brand && (
+                                    <svg className="ml-auto h-4 w-4 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                    </svg>
+                                  )}
+                                </div>
+                              ))
+                            ) : (
+                              <div className="px-4 py-3 text-white/50 text-sm">
+                                No matching brands found
+                              </div>
+                            )}
+                          </div>
+                        )}
+                        <div className={`absolute bottom-0 left-0 h-0.5 bg-[#1aa3dd] transition-all duration-300 ${
+                          focusedField === "brand" ? "w-full" : "w-0"
+                        }`}></div>
+                      </div>
+                    </div>
+
+                    <div className="space-y-1">
+                      <label className="text-white/90 text-sm font-medium flex items-center gap-1">
+                        <FileText className="w-4 h-4 text-[#1aa3dd]" />
+                        Brand Model *
+                      </label>
+                      <div className="relative">
+                        <input
+                          type="text"
+                          name="model"
+                          value={form.model}
+                          onChange={handleChange}
+                          onFocus={() => setFocusedField("model")}
+                          onBlur={() => setFocusedField("")}
+                          placeholder="Enter your phone model (e.g. iPhone 15 Pro, Galaxy S23)"
+                          required
+                          className={`w-full px-4 py-3 bg-white/5 border rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-1 transition-all duration-300 text-sm ${
+                            focusedField === "model"
+                              ? "border-[#1aa3dd] focus:ring-[#1aa3dd]/30 bg-white/10"
+                              : "border-white/20 hover:border-white/30"
+                          }`}
+                        />
+                        <div className={`absolute bottom-0 left-0 h-0.5 bg-[#1aa3dd] transition-all duration-300 ${
+                          focusedField === "model" ? "w-full" : "w-0"
+                        }`}></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Enhanced Fault Selection - Full width */}
+                  <div className="space-y-1">
+                    <label className="text-white/90 text-sm font-medium flex items-center gap-1">
+                      <AlertTriangle className="w-4 h-4 text-[#1aa3dd]" />
+                      Fault Type *
                     </label>
-                    <div className="relative">
-                      <input
-                        type={type}
-                        name={name}
-                        value={form[name]}
-                        onChange={handleChange}
-                        onFocus={() => setFocusedField(name)}
-                        onBlur={() => setFocusedField("")}
-                        placeholder={placeholder}
-                        required
-                        className={`w-full px-3 py-2 md:px-4 md:py-3 bg-white/5 border rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-1 transition-all duration-300 text-sm md:text-base ${
-                          focusedField === name
+                    <div className="relative" ref={faultInputRef}>
+                      <div
+                        onClick={() => setShowFaultDropdown(!showFaultDropdown)}
+                        className={`w-full px-4 py-3 bg-white/5 border rounded-lg text-white cursor-pointer focus:outline-none focus:ring-1 transition-all duration-300 text-sm flex items-center justify-between ${
+                          showFaultDropdown
                             ? "border-[#1aa3dd] focus:ring-[#1aa3dd]/30 bg-white/10"
                             : "border-white/20 hover:border-white/30"
                         }`}
-                      />
-                      <div className={`absolute bottom-0 left-0 h-0.5 bg-[#1aa3dd] transition-all duration-300 ${
-                        focusedField === name ? "w-full" : "w-0"
-                      }`}></div>
-                    </div>
-                  </div>
-                ))}
-
-                <div className="space-y-1">
-                  <label className="text-white/90 text-xs md:text-sm font-medium flex items-center gap-1">
-                    <Smartphone className="w-3 h-3 md:w-4 md:h-4 text-[#1aa3dd]" />
-                    Phone Brand *
-                  </label>
-                  <div className="relative" ref={brandInputRef}>
-                    <input
-                      type="text"
-                      name="brand"
-                      value={form.brand}
-                      onChange={handleChange}
-                      onClick={handleBrandInputClick}
-                      onFocus={() => {
-                        setFocusedField("brand");
-                        setShowBrandDropdown(true);
-                      }}
-                      onBlur={() => setFocusedField("")}
-                      placeholder="Select or type phone brand..."
-                      required
-                      className={`w-full px-3 py-2 md:px-4 md:py-3 bg-white/5 border rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-1 transition-all duration-300 text-sm md:text-base pr-10 ${
-                        focusedField === "brand"
-                          ? "border-[#1aa3dd] focus:ring-[#1aa3dd]/30 bg-white/10"
-                          : "border-white/20 hover:border-white/30"
-                      }`}
-                    />
-                    <ChevronDown 
-                      className={`absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 transition-transform duration-200 text-white/70 ${
-                        showBrandDropdown ? 'rotate-180' : ''
-                      }`}
-                    />
-                    {showBrandDropdown && (
-                      <div 
-                        ref={brandDropdownRef}
-                        className="absolute top-full left-0 right-0 mt-1 bg-slate-800/95 backdrop-blur-sm border border-white/20 rounded-lg shadow-xl max-h-60 overflow-y-auto z-10"
                       >
-                        {filteredBrands.length > 0 ? (
-                          filteredBrands.map((brand, index) => (
-                            <div
-                              key={index}
-                              onClick={() => handleBrandSelect(brand)}
-                              className={`px-4 py-3 text-white hover:bg-white/10 cursor-pointer transition-colors duration-200 text-sm md:text-base flex items-center ${
-                                form.brand === brand ? "bg-white/10 text-cyan-400" : ""
-                              }`}
-                            >
-                              <span className="truncate">{brand}</span>
-                              {form.brand === brand && (
-                                <svg className="ml-auto h-4 w-4 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                </svg>
-                              )}
-                            </div>
-                          ))
-                        ) : (
-                          <div className="px-4 py-3 text-white/50 text-sm md:text-base">
-                            No matching brands found
-                          </div>
-                        )}
+                        <span className={form.fault ? "text-white" : "text-white/50"}>
+                          {form.fault || "Select fault type..."}
+                        </span>
+                        <ChevronDown className={`w-4 h-4 transition-transform duration-200 text-white/70 ${showFaultDropdown ? 'rotate-180' : ''}`} />
                       </div>
-                    )}
-                    <div className={`absolute bottom-0 left-0 h-0.5 bg-[#1aa3dd] transition-all duration-300 ${
-                      focusedField === "brand" ? "w-full" : "w-0"
-                    }`}></div>
-                  </div>
-                </div>
-
-                <div className="space-y-1">
-                  <label className="text-white/90 text-xs md:text-sm font-medium flex items-center gap-1">
-                    <FileText className="w-3 h-3 md:w-4 md:h-4 text-[#1aa3dd]" />
-                    Brand Model *
-                  </label>
-                  <div className="relative">
-                    <input
-                      type="text"
-                      name="model"
-                      value={form.model}
-                      onChange={handleChange}
-                      onFocus={() => setFocusedField("model")}
-                      onBlur={() => setFocusedField("")}
-                      placeholder="Enter your phone model (e.g. iPhone 15 Pro, Galaxy S23)"
-                      required
-                      className={` w-full px-3 py-2 md:px-4 md:py-3 bg-white/5 border rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-1 transition-all duration-300 text-sm md:text-base ${
-                        focusedField === "model"
-                          ? "border-[#1aa3dd] focus:ring-[#1aa3dd]/30 bg-white/10"
-                          : "border-white/20 hover:border-white/30"
-                      }`}
-                    />
-                    <div className={`absolute bottom-0 left-0 h-0.5 bg-[#1aa3dd] transition-all duration-300 ${
-                      focusedField === "model" ? "w-full" : "w-0"
-                    }`}></div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Enhanced Fault Selection - Full width */}
-              <div className="space-y-1">
-                <label className="text-white/90 text-xs md:text-sm font-medium flex items-center gap-1">
-                  <AlertTriangle className="w-3 h-3 md:w-4 md:h-4 text-[#1aa3dd]" />
-                  Fault Type *
-                </label>
-                <div className="relative" ref={faultInputRef}>
-                  <div
-                    onClick={() => setShowFaultDropdown(!showFaultDropdown)}
-                    className={`w-full px-3 py-2 md:px-4 md:py-3 bg-white/5 border rounded-lg text-white cursor-pointer focus:outline-none focus:ring-1 transition-all duration-300 text-sm md:text-base flex items-center justify-between ${
-                      showFaultDropdown
-                        ? "border-[#1aa3dd] focus:ring-[#1aa3dd]/30 bg-white/10"
-                        : "border-white/20 hover:border-white/30"
-                    }`}
-                  >
-                    <span className={form.fault ? "text-white" : "text-white/50"}>
-                      {form.fault || "Select fault type..."}
-                    </span>
-                    <ChevronDown className={`w-4 h-4 transition-transform duration-200 text-white/70 ${showFaultDropdown ? 'rotate-180' : ''}`} />
-                  </div>
-                  {showFaultDropdown && (
-                    <div 
-                      ref={faultDropdownRef}
-                      className={`absolute left-0 right-0 mt-1 bg-slate-800/95 backdrop-blur-sm border border-white/20 rounded-lg shadow-xl max-h-80 overflow-y-auto z-50 divide-y divide-white/10 ${
-                        dropdownPosition === "above" ? "bottom-full mb-1" : "top-full"
-                      }`}
-                    >
-                      {faultOptions.map((group, groupIndex) => (
-                        <div key={groupIndex} className="py-1">
-                          <div className="px-3 py-2 text-xs font-medium text-white/60 uppercase tracking-wider bg-white/5">
-                            {group.category}
-                          </div>
-                          {group.items.map((fault, itemIndex) => (
-                            <div
-                              key={`${groupIndex}-${itemIndex}`}
-                              onClick={() => handleFaultSelect(fault)}
-                              className={`px-4 py-3 text-white hover:bg-white/10 cursor-pointer transition-colors duration-200 text-sm md:text-base flex items-center ${
-                                form.fault === fault ? "bg-white/10 text-cyan-400" : ""
-                              } ${fault === "Other issue not listed" ? "border-l-4 border-orange-500" : ""}`}
-                            >
-                              <span className="truncate">
-                                {fault === "Other issue not listed" ? "🔧 Other issue not listed" : fault}
-                              </span>
-                              {form.fault === fault && (
-                                <svg className="ml-auto h-4 w-4 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                </svg>
-                              )}
+                      {showFaultDropdown && (
+                        <div 
+                          ref={faultDropdownRef}
+                          className={`absolute left-0 right-0 bg-slate-800/95 backdrop-blur-sm border border-white/20 rounded-lg shadow-xl max-h-80 overflow-y-auto z-50 divide-y divide-white/10 ${
+                            faultDropdownPosition === "above" ? "bottom-full mb-1" : "top-full mt-1"
+                          }`}
+                        >
+                          {faultOptions.map((group, groupIndex) => (
+                            <div key={groupIndex} className="py-1">
+                              <div className="px-3 py-2 text-xs font-medium text-white/60 uppercase tracking-wider bg-white/5">
+                                {group.category}
+                              </div>
+                              {group.items.map((fault, itemIndex) => (
+                                <div
+                                  key={`${groupIndex}-${itemIndex}`}
+                                  onClick={() => handleFaultSelect(fault)}
+                                  className={`px-4 py-3 text-white hover:bg-white/10 cursor-pointer transition-colors duration-200 text-sm flex items-center ${
+                                    form.fault === fault ? "bg-white/10 text-cyan-400" : ""
+                                  } ${fault === "Other issue not listed" ? "border-l-4 border-orange-500" : ""}`}
+                                >
+                                  <span className="truncate">
+                                    {fault === "Other issue not listed" ? "🔧 Other issue not listed" : fault}
+                                  </span>
+                                  {form.fault === fault && (
+                                    <svg className="ml-auto h-4 w-4 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                    </svg>
+                                  )}
+                                </div>
+                              ))}
                             </div>
                           ))}
                         </div>
-                      ))}
+                      )}
+                      <div className={`absolute bottom-0 left-0 h-0.5 bg-[#1aa3dd] transition-all duration-300 ${
+                        showFaultDropdown ? "w-full" : "w-0"
+                      }`}></div>
+                    </div>
+                  </div>
+
+                  {showMessageField && (
+                    <div className="space-y-1 animate-slide-down">
+                      <label className="text-white/90 text-sm font-medium flex items-center gap-1">
+                        <MessageSquare className="w-4 h-4 text-[#1aa3dd]" />
+                        Describe Your Issue *
+                      </label>
+                      <div className="relative">
+                        <textarea
+                          name="message"
+                          value={form.message}
+                          onChange={handleChange}
+                          onFocus={() => setFocusedField("message")}
+                          onBlur={() => setFocusedField("")}
+                          placeholder="Please describe the issue with your device in detail..."
+                          required
+                          rows={4}
+                          className={`w-full px-4 py-3 bg-white/5 border rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-1 transition-all duration-300 text-sm resize-none ${
+                            focusedField === "message"
+                              ? "border-[#1aa3dd] focus:ring-[#1aa3dd]/30 bg-white/10"
+                              : "border-white/20 hover:border-white/30"
+                          }`}
+                        />
+                        <div className={`absolute bottom-0 left-0 h-0.5 bg-[#1aa3dd] transition-all duration-300 ${
+                          focusedField === "message" ? "w-full" : "w-0"
+                        }`}></div>
+                      </div>
+                      <p className="text-white/50 text-xs mt-1">
+                        💡 Please provide as much detail as possible about the issue you're experiencing
+                      </p>
                     </div>
                   )}
-                  <div className={`absolute bottom-0 left-0 h-0.5 bg-[#1aa3dd] transition-all duration-300 ${
-                    showFaultDropdown ? "w-full" : "w-0"
-                  }`}></div>
+
+                  <button
+                    onClick={handleSubmit}
+                    disabled={isSubmitting}
+                    className={`w-full py-4 px-6 bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-semibold rounded-lg shadow-lg transform transition-all duration-300 text-sm ${
+                      isSubmitting
+                        ? "scale-95 opacity-80 cursor-not-allowed"
+                        : "hover:scale-105 hover:shadow-xl active:scale-95"
+                    }`}
+                  >
+                    <div className="flex items-center justify-center gap-2">
+                      {isSubmitting ? (
+                        <>
+                          <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                          <span>Sending...</span>
+                        </>
+                      ) : (
+                        <>
+                          <Send className="w-5 h-5" />
+                          <span>Send via WhatsApp</span>
+                        </>
+                      )}
+                    </div>
+                  </button>
                 </div>
               </div>
-
-              {showMessageField && (
-                <div className="space-y-1 animate-slide-down">
-                  <label className="text-white/90 text-xs md:text-sm font-medium flex items-center gap-1">
-                    <MessageSquare className="w-3 h-3 md:w-4 md:h-4 text-[#1aa3dd]" />
-                    Describe Your Issue *
-                  </label>
-                  <div className="relative">
-                    <textarea
-                      name="message"
-                      value={form.message}
-                      onChange={handleChange}
-                      onFocus={() => setFocusedField("message")}
-                      onBlur={() => setFocusedField("")}
-                      placeholder="Please describe the issue with your device in detail..."
-                      required
-                      rows={4}
-                      className={`w-full px-3 py-2 md:px-4 md:py-3 bg-white/5 border rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-1 transition-all duration-300 text-sm md:text-base resize-none ${
-                        focusedField === "message"
-                          ? "border-[#1aa3dd] focus:ring-[#1aa3dd]/30 bg-white/10"
-                          : "border-white/20 hover:border-white/30"
-                      }`}
-                    />
-                    <div className={`absolute bottom-0 left-0 h-0.5 bg-[#1aa3dd] transition-all duration-300 ${
-                      focusedField === "message" ? "w-full" : "w-0"
-                    }`}></div>
-                  </div>
-                  <p className="text-white/50 text-xs mt-1">
-                    💡 Please provide as much detail as possible about the issue you're experiencing
-                  </p>
-                </div>
-              )}
-
-              <button
-                onClick={handleSubmit}
-                disabled={isSubmitting}
-                className={`w-full py-3 md:py-4 px-4 md:px-6 bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-semibold rounded-lg shadow-lg transform transition-all duration-300 text-sm md:text-base ${
-                  isSubmitting
-                    ? "scale-95 opacity-80 cursor-not-allowed"
-                    : "hover:scale-105 hover:shadow-xl active:scale-95"
-                }`}
-              >
-                <div className="flex items-center justify-center gap-2">
-                  {isSubmitting ? (
-                    <>
-                      <div className="w-4 h-4 md:w-5 md:h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                      <span>Sending...</span>
-                    </>
-                  ) : (
-                    <>
-                      <Send className="w-4 h-4 md:w-5 md:h-5" />
-                      <span>Send via WhatsApp</span>
-                    </>
-                  )}
-                </div>
-              </button>
             </div>
           </div>
         </div>

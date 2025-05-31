@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { Particless } from "../components/Particles";
 import CustomerCareForm from "../components/CustomerCareForm";
+import ShopAddress from "../components/ShopAddress";
 
 const contact = () => {
   const headingRef = useRef();
@@ -33,13 +34,14 @@ const contact = () => {
           </div>
           
         </div>
-        <div className="">
-        <CustomerCareForm />
-        </div>
        
+        <CustomerCareForm />
+        <ShopAddress/>
+   
+        </div>
+        
       </div>
-      
-    </div>
+     
   );
 };
 
