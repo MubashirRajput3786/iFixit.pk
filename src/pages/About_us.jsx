@@ -36,9 +36,10 @@ const about_us = () => {
           
           
         </div>
-        <MobileRepairIntro/>
+       
        
       </div>
+      <MobileRepairIntro/>
       <ServiceCoreValues />
       <WorkingProcess/>
     </div>

@@ -58,12 +58,13 @@ const Service = () => {
           </div>
 
           {/* Animated Service Cards */}
-          <MobileRepairServices />
+          
+        </div>
+      </div>
+      <MobileRepairServices />
           <div className="flex justify-center my-6">
             <AnimatedButton content={"Book My Repair"} />
           </div>
-        </div>
-      </div>
     </div>
   );
 };

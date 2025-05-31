@@ -279,7 +279,7 @@ Sent via Customer Care Form`;
         {toasts.map((toast) => (
           <div
             key={toast.id}
-            className={`bg-white px-4 py-3 rounded-lg shadow-lg border-2 font-medium text-sm max-w-sm animate-fade-in ${getToastColor(toast.type)}`}
+            className={` px-4 py-3 rounded-lg shadow-lg border-2 font-medium text-sm max-w-sm animate-fade-in ${getToastColor(toast.type)}`}
           >
             {toast.message}
           </div>
