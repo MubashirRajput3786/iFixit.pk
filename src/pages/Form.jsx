@@ -1,8 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { Particless } from "../components/Particles";
-import MobileBookingForm from '../components/MobileBookingForm';
-
+import CustomerCareForm from "../components/CustomerCareForm";
 const form = () => {
   const headingRef = useRef();
   const formRef = useRef();
@@ -36,11 +35,12 @@ const form = () => {
             {/* ✅ BookingForm Rendered */}
             
           </div>
-          <div ref={formRef} className="mt-8">
-              <MobileBookingForm />
-            </div>
+         
         </div>
       </div>
+      <div ref={formRef} className="mt-8">
+            <CustomerCareForm/>
+            </div>
     </div>
   );
 };

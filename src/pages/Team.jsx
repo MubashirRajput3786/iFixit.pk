@@ -32,8 +32,9 @@ const Team = () => {
           </div>
         </div>
 <Gallery />
-<CallToAction />
+<div className="w-full"><CallToAction /></div>
       </div>
+      
     </div>
   );
 };

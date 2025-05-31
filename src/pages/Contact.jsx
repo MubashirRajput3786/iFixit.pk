@@ -25,16 +25,20 @@ const contact = () => {
               <div className="my-dot position-absolute"></div>
               <h2
                 ref={headingRef}
-                className="display-2 fw-bold"
+                className="display-2 sm:display-4 fw-bold"
               >
-                Contact
+                Contact us
               </h2>
             </div>
           </div>
-          <CustomerCareForm />
+          
         </div>
-        
+        <div className="">
+        <CustomerCareForm />
+        </div>
+       
       </div>
+      
     </div>
   );
 };

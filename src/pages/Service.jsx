@@ -6,12 +6,28 @@ import AnimatedButton from "../components/AnimatedButton";
 
 const Service = () => {
   const headingRef = useRef();
+  const warrantyRef = useRef();
 
   useEffect(() => {
+    // Main heading animation
     gsap.fromTo(
       headingRef.current,
       { opacity: 0, y: -60 },
       { opacity: 1, y: 0, duration: 2.5, ease: "power3.out" }
+    );
+
+    // Warranty text animation - starts after main heading
+    gsap.fromTo(
+      warrantyRef.current,
+      { opacity: 0, x: 60, scale: 0.8 },
+      { 
+        opacity: 1, 
+        x: 0, 
+        scale: 1, 
+        duration: 1, 
+        ease: "power3.out",
+        delay: 1 // Starts 1 second after main heading
+      }
     );
   }, []);
 
@@ -31,24 +47,23 @@ const Service = () => {
             </div>
           </div>
 
-          {/* Animated Button Centered */}
-         
-
-          {/* Warranty Text - Only on md and up */}
+          {/* Warranty Text - Only on md and up with animation */}
           <div className="w-full my-3 hidden md:block">
-            <h2 className="text-3xl text-white font-bold text-right m-10">
+            <h2 
+              ref={warrantyRef} 
+              className="text-3xl text-white font-bold text-right m-10"
+            >
               All Services Come with a 30-Days Warranty*
             </h2>
           </div>
 
           {/* Animated Service Cards */}
           <MobileRepairServices />
-          <div className="flex justify-center  my-6">
+          <div className="flex justify-center my-6">
             <AnimatedButton content={"Book My Repair"} />
           </div>
-      </div>
         </div>
-        
+      </div>
     </div>
   );
 };
