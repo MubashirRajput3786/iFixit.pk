@@ -35,11 +35,11 @@ const contact = () => {
           
         </div>
        
+       
+        </div>
         <CustomerCareForm />
         <ShopAddress/>
    
-        </div>
-        
       </div>
      
   );
