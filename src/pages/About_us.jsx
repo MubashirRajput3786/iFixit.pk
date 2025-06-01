@@ -17,12 +17,12 @@ const about_us = () => {
   }, []);
 
   return (
-    <div className="relative bg-black min-h-screen">
+    <div className="relative min-h-screen">
       <Particless />
 
       <div className="relative z-10 text-white p-10">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="col-lg-6 p-5">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="col-lg-12 p-2">
             <div className="dot-div position-relative">
               <div className="my-dot position-absolute"></div>
               <h2

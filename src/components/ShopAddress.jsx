@@ -70,37 +70,49 @@ const ShopAddress = () => {
 
   const shopData = {
     name: "iFixit",
-    address: "123 Fashion Street, Downtown District",
-    city: "New York, NY 10001",
-    phone: "+1 (555) 123-4567",
-    email: "hello@urbanstyle.com",
-    hours: {
-      weekdays: "Mon - Fri: 9:00 AM - 8:00 PM",
-      weekend: "Sat - Sun: 10:00 AM - 6:00 PM"
+    address: "M-Dubai Tower, Lethrar Road, Khanna Pull, Islamabad",
+    city: "FF-32 , 1st Floor",
+    phone: {
+      primary: "+92-51-2619229",
+      secondary: "+92-308-4977779"
     },
-    coordinates: "40.7128, -74.0060"
+    email: "rizwan.14397@gmail.com",
+    hours: {
+      weekdays: "Sat - Thurs: 11 AM to 10 PM",
+    },
+    // Full address for Google Maps
+    fullAddress: "FF-32, 1st Floor, M-Dubai Tower, Lethrar Road, Khanna Pull, Islamabad, Pakistan"
+  };
+
+  // Function to open Google Maps with directions to iFixit.Pk
+  const openGoogleMaps = () => {
+    // Direct link to iFixit.Pk on Google Maps
+    const googleMapsUrl = `https://www.google.com/maps/place/iFixit.Pk/@33.616007,72.921301,15z/data=!4m6!3m5!1s0x38dfeb3f071f0ba9:0x5dc4cff421ca684b!8m2!3d33.616007!4d72.921301!16s%2Fg%2F11c5h9_xyz`;
+    
+    // Open Google Maps in a new tab/window
+    window.open(googleMapsUrl, '_blank');
   };
 
   return (
-    <div ref={containerRef} className="min-h-screen  p-4 sm:p-6 lg:p-8">
+    <div ref={containerRef} className="min-h-screen p-4 sm:p-6 lg:p-8">
       <div className="max-w-6xl mx-auto">
         {/* Hero Section */}
         <div 
           ref={cardRef}
           className="text-center mb-12 relative"
         >
-          <div className="absolute inset-0  rounded-3xl blur-3xl"></div>
-          <div className="relative  backdrop-blur-sm rounded-3xl p-8 shadow-xl border-2 border-[#1aa3dd]">
+          <div className="absolute inset-0 rounded-3xl blur-3xl"></div>
+          <div className="relative backdrop-blur-sm rounded-3xl p-8 shadow-xl border-2 border-[#1aa3dd]">
             <div className="flex justify-center mb-4">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="w-6 h-6 text-yellow-400 fill-current" />
               ))}
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold  bg-clip-text text-transparent mb-4">
+            <h1 className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent mb-4">
               {shopData.name}
             </h1>
             <p className="text-xl text-[#1aa3dd] max-w-2xl mx-auto leading-relaxed">
-              Experience fashion like never before at our premium boutique in the heart of the city
+              Empowering you to repair — iFixit
             </p>
           </div>
         </div>
@@ -110,7 +122,8 @@ const ShopAddress = () => {
           {/* Location Card */}
           <div 
             ref={addToRefs}
-            className=" backdrop-blur-sm rounded-2xl p-6 shadow-lg border-2 border-[#1aa3dd] hover:shadow-2xl transition-all duration-300 cursor-pointer group"
+            className="backdrop-blur-sm rounded-2xl p-6 shadow-lg border-2 border-[#1aa3dd] hover:shadow-2xl transition-all duration-300 cursor-pointer group"
+            onClick={openGoogleMaps}
           >
             <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-red-500 to-pink-600 rounded-2xl mb-4 mx-auto group-hover:rotate-6 transition-transform duration-300">
               <MapPin className="w-8 h-8 text-white" />
@@ -119,59 +132,67 @@ const ShopAddress = () => {
             <p className="text-[#1aa3dd] text-center text-sm leading-relaxed">
               {shopData.address}
             </p>
-            <p className="text-[#1aa3dd] text-center text-sm font-medium mt-1">
+            <p className="text-white font-bold text-center text-sm mt-1">
               {shopData.city}
+            </p>
+            <p className="text-green-600 text-center text-xs mt-2 font-medium">
+              Click for directions
             </p>
           </div>
 
           {/* Phone Card */}
           <div 
             ref={addToRefs}
-            className=" backdrop-blur-sm rounded-2xl p-6 shadow-lg border-2 border-[#1aa3dd] hover:shadow-2xl transition-all duration-300 cursor-pointer group"
+            className="backdrop-blur-sm rounded-2xl p-6 shadow-lg border-2 border-[#1aa3dd] hover:shadow-2xl transition-all duration-300 cursor-pointer group"
           >
             <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl mb-4 mx-auto group-hover:rotate-6 transition-transform duration-300">
               <Phone className="w-8 h-8 text-white" />
             </div>
-            <h3 className="text-lg font-bold mb-2 text-center">Call Us</h3>
+            <h3 className="text-white font-bold text-center mt-1">Call Us</h3>
             <a 
-              href={`tel:${shopData.phone}`}
-              className="block text-green-600 hover:text-green-700 font-medium text-center transition-colors"
+              href={`tel:${shopData.phone.primary}`}
+              className="block text-green-600 hover:text-green-700 font-medium text-center transition-colors text-sm"
             >
-              {shopData.phone}
+              {shopData.phone.primary}
             </a>
-            <p className="text-[#1aa3dd] text-xs text-center mt-1">Tap to call</p>
+            <a 
+              href={`tel:${shopData.phone.secondary}`}
+              className="block text-green-600 hover:text-green-700 font-medium text-center transition-colors text-sm mt-1"
+            >
+              {shopData.phone.secondary}
+            </a>
+            <p className="text-white font-bold text-center mt-1">Tap to call</p>
           </div>
 
           {/* Email Card */}
           <div 
             ref={addToRefs}
-            className=" backdrop-blur-sm rounded-2xl p-6 shadow-lg border-2 border-[#1aa3dd] hover:shadow-2xl transition-all duration-300 cursor-pointer group"
+            className="backdrop-blur-sm rounded-2xl p-6 shadow-lg border-2 border-[#1aa3dd] hover:shadow-2xl transition-all duration-300 cursor-pointer group"
           >
             <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl mb-4 mx-auto group-hover:rotate-6 transition-transform duration-300">
               <Mail className="w-8 h-8 text-white" />
             </div>
-            <h3 className="text-lg font-bold  mb-2 text-center">Email Us</h3>
+            <h3 className="text-lg font-bold mb-2 text-center">Email Us</h3>
             <a 
               href={`mailto:${shopData.email}`}
               className="block text-[#1aa3dd] hover:text-blue-700 font-medium text-center transition-colors text-sm"
             >
               {shopData.email}
             </a>
-            <p className="text-gray-500 text-xs text-center mt-1">Quick response</p>
+            <p className="text-white font-bold text-center mt-1">Quick response</p>
           </div>
 
           {/* Hours Card */}
           <div 
             ref={addToRefs}
-            className=" backdrop-blur-sm rounded-2xl p-6 shadow-lg border-2 border-[#1aa3dd] hover:shadow-2xl transition-all duration-300 cursor-pointer group"
+            className="backdrop-blur-sm rounded-2xl p-6 shadow-lg border-2 border-[#1aa3dd] hover:shadow-2xl transition-all duration-300 cursor-pointer group"
           >
             <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl mb-4 mx-auto group-hover:rotate-6 transition-transform duration-300">
               <Clock className="w-8 h-8 text-white" />
             </div>
-            <h3 className="text-lg font-bold text-gray-800 mb-2 text-center">Store Hours</h3>
+            <h3 className="text-lg font-bold text-gray-800 mb-2 text-center">Opening Time</h3>
             <div className="text-center space-y-1">
-              <p className="text-[#1aa3dd] text-sm">{shopData.hours.weekdays}</p>
-              <p className="text-[#1aa3dd] text-sm">{shopData.hours.weekend}</p>
+              <p className="text-[#1aa3dd] text-2xl">{shopData.hours.weekdays}</p>
             </div>
           </div>
         </div>
@@ -179,18 +200,19 @@ const ShopAddress = () => {
         {/* Action Section */}
         <div 
           ref={addToRefs}
-          className=" backdrop-blur-sm rounded-3xl p-8 shadow-xl border-2 border-[#1aa3dd]"
+          className="backdrop-blur-sm rounded-3xl p-8 shadow-xl border-2 border-[#1aa3dd]"
         >
           <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold  mb-4">Ready to Visit?</h2>
+            <h2 className="text-3xl font-bold mb-4">Ready to Visit?</h2>
             <p className="text-[#1aa3dd] max-w-2xl mx-auto">
-              Get directions to our store or explore our collection online. We're here to help you find your perfect style.
+              Get directions to our store or explore our collection online. We're here to help you find your perfect repair solution.
             </p>
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
             <button 
               ref={addToRefs}
+              onClick={openGoogleMaps}
               className="flex-1 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold py-4 px-6 rounded-2xl transition-all duration-300 flex items-center justify-center space-x-3 shadow-lg hover:shadow-xl group transform hover:-translate-y-1"
             >
               <Navigation className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
@@ -206,9 +228,6 @@ const ShopAddress = () => {
             </button>
           </div>
         </div>
-
-        {/* Decorative Elements */}
-       
       </div>
     </div>
   );
