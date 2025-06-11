@@ -19,13 +19,13 @@ export const group_data = [
     id: 3,
     icon: "https://cdn-icons-png.flaticon.com/512/670/670910.png",
     title: "Fast Return",
-    desc: "Get your device back in no time!",
+    desc: "Get your device back in comitted time!",
   },
   {
     id:4,
     icon: "https://cdn-icons-png.flaticon.com/512/18282/18282081.png",
     title: "No Repair No Charge",
-    desc: "You only pay if we fix it!",
+    desc: "You only pay after it is fixed!",
   },
   // {
   //   id: 5,

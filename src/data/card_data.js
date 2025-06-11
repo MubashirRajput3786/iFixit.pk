@@ -22,14 +22,14 @@ export const card_data = [
   },
   {
     id: 4,
-    image: "https://www.nothingmobileservice.brokencare.co.in/images/nothing-mobile-service.png",
-    heading: "Creative Content",
-    desc: "Quis commodo odio platea dictumst aenean sed. Massa eget egestas purus viverra accumsan in nisl nisi.",
+    image: "https://pngimg.com/uploads/iphone_13/iphone_13_PNG22.png",
+    heading: "Next Level Repairing",
+    desc: "Advanced mobile repairing involves intricate diagnostics and micro-soldering techniques to restore complex smartphone hardware and software issues efficiently.",
   },
   {
     id: 5,
-    image: "https://png.pngtree.com/png-vector/20240914/ourmid/pngtree-phone-repair-electronic-devices-on-transparent-background-png-image_13838381.png",
-    heading: "Innovative Ideas",
-    desc: "Quis commodo odio platea dictumst aenean sed. Massa eget egestas purus viverra accumsan in nisl nisi.",
+    image: "https://raw.githubusercontent.com/hdpngworld/HPW/main/uploads/65038654434d0-iPhone%2015%20Pro%20Natural%20titanium%20png.png",
+    heading: "Advance Learning Platform",
+    desc: "We Provide Advance Mobile Repair Learning Platform For New Commers",
   },
 ];

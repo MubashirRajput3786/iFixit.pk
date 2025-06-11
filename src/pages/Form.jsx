@@ -39,10 +39,18 @@ const form = () => {
         </div>
       </div>
       <div ref={formRef} className="mt-8">
-            <CustomerCareForm/>
+            <CustomerCareForm />
             </div>
     </div>
   );
 };
 
 export default form;
+
+
+
+
+
+
+
+

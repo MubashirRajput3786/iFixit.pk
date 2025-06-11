@@ -13,7 +13,7 @@ const Advertisment = () => {
         <span style={{ color: "#ffffff", fontWeight: "bold" }}>
           <Typewriter
             words={[
-              "We Provide Guaranteed Solution For Every Single Device With 30 Days Warranty.",
+              "We Provide Guaranteed Solution For Every Single Device With 30 Days Warranty*",
               "That Makes Our Customers Satisfied.",
               "We Also Provide Complete Mobile Repairing Courses From Beginner to Advanced Level For Everyone."
             ]}
@@ -77,7 +77,7 @@ const Advertisment = () => {
           rel="noopener noreferrer"
           className="fw-bold text-white text-decoration-none"
         >
-          ifixit.pk
+          iFixit.Pk
         </a>
         . All rights reserved.
       </div>

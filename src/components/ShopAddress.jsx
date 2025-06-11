@@ -69,7 +69,7 @@ const ShopAddress = () => {
   };
 
   const shopData = {
-    name: "iFixit",
+    name: "iFixit Pakistan",
     address: "M-Dubai Tower, Lethrar Road, Khanna Pull, Islamabad",
     city: "FF-32 , 1st Floor",
     phone: {
@@ -205,7 +205,7 @@ const ShopAddress = () => {
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold mb-4">Ready to Visit?</h2>
             <p className="text-[#1aa3dd] max-w-2xl mx-auto">
-              Get directions to our store or explore our collection online. We're here to help you find your perfect repair solution.
+            Visit Our Shop – Tools, Parts & Repair Help All in One Place.
             </p>
           </div>
           
@@ -213,7 +213,7 @@ const ShopAddress = () => {
             <button 
               ref={addToRefs}
               onClick={openGoogleMaps}
-              className="flex-1 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold py-4 px-6 rounded-2xl transition-all duration-300 flex items-center justify-center space-x-3 shadow-lg hover:shadow-xl group transform hover:-translate-y-1"
+              className="flex-1 bg-gradient-to-r from-[#1aa3dd] to-blue-600 hover:from-blue-700 hover:to-[#1aa3dd] text-white font-semibold py-4 px-6 rounded-2xl transition-all duration-300 flex items-center justify-center space-x-3 shadow-lg hover:shadow-xl group transform hover:-translate-y-1"
             >
               <Navigation className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
               <span>Get Directions</span>
@@ -221,7 +221,7 @@ const ShopAddress = () => {
             
             <button 
               ref={addToRefs}
-              className="flex-1 bg-white border-2 border-purple-200 hover:border-purple-300 text-purple-600 hover:text-purple-700 font-semibold py-4 px-6 rounded-2xl transition-all duration-300 flex items-center justify-center space-x-3 hover:bg-purple-50 group transform hover:-translate-y-1 shadow-lg hover:shadow-xl"
+              className="flex-1 bg-white border-2 border-[#1aa3dd] hover:border-blue-600 text-[#1aa3dd] hover:text-[#1aa3dd] font-semibold py-4 px-6 rounded-2xl transition-all duration-300 flex items-center justify-center space-x-3 hover:bg-purple-50 group transform hover:-translate-y-1 shadow-lg hover:shadow-xl"
             >
               <ExternalLink className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
               <span>Visit Website</span>

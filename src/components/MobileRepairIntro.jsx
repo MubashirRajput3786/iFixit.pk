@@ -116,7 +116,7 @@ const MobileRepairIntro = () => {
         <div ref={textSectionRef} className="lg:w-1/2 w-full">
           <h1 
             ref={headingRef}
-            className="text-sky-400 text-2xl md:text-3xl font-semibold leading-relaxed mb-6"
+            className="text-sky-400 capitalize text-2xl md:text-3xl font-semibold leading-relaxed mb-6"
           >
             "We provide full & specific solutions for our every customers<br />
             We also provide complete courses of mobile repairing."

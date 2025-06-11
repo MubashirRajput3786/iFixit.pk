@@ -12,7 +12,7 @@ const Cards = ({ contentNumber }) => {
             <h2>{card_data[contentNumber].heading}</h2>
             <h3 className="text">{card_data[contentNumber].title}</h3>
             <p className="text-white">{card_data[contentNumber].desc}</p>
-            <SlidingDiv content="Read More" />
+            <SlidingDiv content="iFixit.Pk" />
           </div>
         </div>
       </div>
