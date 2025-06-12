@@ -160,7 +160,7 @@ const FormContent = ({ form, setForm, isSubmitting, handleSubmit }) => {
               <span className="text-[#1aa3dd] font-medium cursor-pointer underline">
                 Privacy Policy
               </span>
-              {' '}and understand that my contact information will be used to provide repair services, send updates about my device repair status, communicate regarding service schedules, and may be shared with authorized technicians for service delivery purposes. I consent to receiving SMS and email notifications related to my repair service.
+              {' '}and understand that my contact information will be used to provide repair services, send updates about my device repair status, communicate regarding service schedules, and may be shared with authorized technicians for service delivery purposes. I consent to receiving SMS related to my repair service.
             </label>
           </div>
         </div>

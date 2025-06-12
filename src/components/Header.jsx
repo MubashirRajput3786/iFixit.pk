@@ -14,7 +14,7 @@ const Header = ({ open, setOpen }) => {
 
   return (
     <>
-      <div className="d-flex p-4 justify-content-around header align-items-center">
+      <div className="d-flex p-4 justify-content-around header align-items-center ">
         <div className="logo d-flex align-items-center">
           <GoDotFill size={25} color="#1AA3DD" />
           <div className="d-flex align-items-center">
@@ -22,7 +22,7 @@ const Header = ({ open, setOpen }) => {
           </div>
         </div>
 
-        <ul className="items text-uppercase d-none d-md-flex list-unstyled m-0 gap-5">
+        <ul className="items text-uppercase d-none d-md-flex list-unstyled m-0  gap-5">
           <li className="menu-close ms-auto border-0">
             <IoMdClose size={25} />
           </li>
