@@ -15,6 +15,7 @@ import PopUp from "./components/PopUp";
 import "./globals.css";
 import Team from "./pages/Team";
 import Form from "./pages/Form"; // ✅ Capital 'F'
+import Privacy_Policy from "./pages/Privacy_Policy"
 
 const AppContent = ({ open, setOpen }) => {
   const location = useLocation();
@@ -42,6 +43,7 @@ const AppContent = ({ open, setOpen }) => {
     <Route path="/Team" element={<Team />} />
     <Route path="/contact" element={<Contact />} />
     <Route path="/form" element={<Form />} /> {/* ✅ Corrected here */}
+    <Route path="/Privacy_Policy" element={<Privacy_Policy />} />
   </Route>
 </Routes>
     </>

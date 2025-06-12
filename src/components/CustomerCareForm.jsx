@@ -83,7 +83,7 @@ const FormContent = ({ form, setForm, isSubmitting, handleSubmit }) => {
               <option value="OnePlus" className="text-gray-900">OnePlus</option>
               <option value="Oppo" className="text-gray-900">Oppo</option>
               <option value="Vivo" className="text-gray-900">Vivo</option>
-              <option value="Other" className="text-gray-900">Other</option>
+              <option value="Other" className="text-gray-900">google</option>
             </select>
           </div>
           <div>
@@ -288,7 +288,7 @@ const CustomerCareForm = () => {
           <div className="w-20 h-20 mx-auto bg-gradient-to-r from-[#1aa3dd] to-[#0d7fb5] rounded-2xl flex items-center justify-center mb-6">
             <Wrench className="w-10 h-10 text-white" />
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">iFixit</h1>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">iFixit.pk</h1>
           <span className="text-2xl block text-white/80 mt-2">Customer Care</span>
           <p className="text-lg text-white/70 mt-4 max-w-2xl mx-auto">Expert mobile phone repair services. We fix it right, we fix it fast.</p>
         </div>

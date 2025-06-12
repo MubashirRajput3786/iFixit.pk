@@ -4,26 +4,26 @@ export const imageData = [
   {
     name: "Home",
     route: "/",
-    imageURL: "https://www.shutterstock.com/image-vector/phone-repair-service-disassembled-smartphone-600nw-1965677689.jpg",
+    imageURL: "/serviceImages/home.jpg",
   },
   {
     name: "Services",
     route: "/Service",
-    imageURL: "https://gaaga.wpengine.com/wp-content/uploads/2023/06/Gaaga-Side-Menu-Career-Img.png",
+    imageURL: "/serviceImages/service.jpg",
   },
   {
     name: "About",
     route: "/About_us",
-    imageURL: "https://gaaga.wpengine.com/wp-content/uploads/2023/06/Gaaga-Side-Menu-Contact-Img.png",
+    imageURL: "/serviceImages/about.jpg",
   },
   {
     name: "Team",
     route: "/Team",
-    imageURL: "https://gaaga.wpengine.com/wp-content/uploads/2023/06/Gaaga-Side-Menu-Contact-Img.png",
+    imageURL: "/serviceImages/team.jpg",
   },
   {
     name: "Contact",
     route: "/contact",
-    imageURL: "https://gaaga.wpengine.com/wp-content/uploads/2023/06/Gaaga-Side-Menu-Projects-Img.png",
+    imageURL: "https://img.freepik.com/free-photo/businesswoman-talking-cellphone-office_329181-8863.jpg?semt=ais_items_boosted&w=740",
   },
 ];

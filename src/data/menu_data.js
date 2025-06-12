@@ -24,4 +24,9 @@ export const menu_data = [
     name: "Contact us",
     link: "/contact",
   },
+  {
+    id: 6,
+    name: "Privacy Policy",
+    link: "/Privacy_Policy",
+  },
 ];
